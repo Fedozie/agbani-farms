@@ -111,10 +111,10 @@ const NewsSection = () => {
         <div className="relative z-10">
           {/* Header */}
           <div className="flex flex-col items-center mb-12">
-            <p className="text-white text-xs font-semibold tracking-[0.2em] uppercase mb-4">
+            <p className="text-white text-xl font-normal uppercase mb-4">
               From the Blog
             </p>
-            <h2 className="text-white text-5xl font-extrabold">
+            <h2 className="text-white text-[3.125rem] font-bold">
               News & Articles
             </h2>
           </div>
@@ -174,7 +174,7 @@ const NewsSection = () => {
           {partners.map((partner, index) => (
             <div
               key={index}
-              className="flex items-center gap-2 opacity-40 hover:opacity-70 transition-opacity duration-300"
+              className="flex items-center gap-2 opacity-60"
             >
               <img
                 src={ServicesImg}

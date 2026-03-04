@@ -31,15 +31,15 @@ const IntroductionSection = () => {
               className="w-full h-162.5 object-cover rounded-2xl"
             />
 
-            <div className="absolute -bottom-12 left-16 right-16 bg-secondary-green/90 backdrop-blur-sm rounded-xl px-6 py-8 flex items-center gap-4 divide-x-2 divide-white/50">
+            <div className="absolute -bottom-12 left-10 right-10 bg-secondary-green/90 backdrop-blur-sm rounded-xl px-6 py-8 flex items-center gap-4 divide-x-2 divide-white/50">
               <img
                 src={IntroMoneyIcon}
                 alt="Money stack"
                 className="h-12 pr-2"
               />
               <div className="pl-2">
-                <p className="text-white text-4xl font-bold">50</p>
-                <p className="text-white text-sm font-semibold tracking-wide">
+                <p className="text-white text-4xl font-bold font-vibur">50</p>
+                <p className="text-white text-base font-semibold tracking-wide">
                   Projects Successfully Completed
                 </p>
               </div>
@@ -50,7 +50,7 @@ const IntroductionSection = () => {
 
       {/* Right — Content */}
       <div className="relative z-10 w-1/2">
-        <p className="text-white text-xl font-semibold tracking-[0.2em] uppercase mb-4">
+        <p className="text-white text-xl font-semibold uppercase mb-4">
           Introduction
         </p>
 

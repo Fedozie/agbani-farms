@@ -1,4 +1,7 @@
+@import url('https://fonts.googleapis.com/css2?family=Livvic:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,900&family=Vibur&display=swap');
+
 @import "tailwindcss";
+
 
 @theme{
   --color-primary-yellow: #F7C35F;
@@ -8,6 +11,8 @@
   --color-accent-green: #678551;
   --color-accent-white: #DDDDDD26;
   --color-text-green: #344C31;
+  --font-livvic: "Livvic", sans-serif;
+  --font-vibur: "Vibur", cursive;
 }
 
 :root {
@@ -30,5 +35,6 @@ html {
 
 body {
   overflow-x: hidden;
+  font-family: var(--font-livvic);
 }
 

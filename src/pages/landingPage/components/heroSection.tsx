@@ -35,7 +35,7 @@ const HeroSection = () => {
 
       <div className="absolute inset-0 bg-black/30" />
 
-      <div className="relative z-10 px-16 py-20 max-w-xl">
+      <div className="relative z-10 px-16 py-20 w-[40%]">
         <div className="relative w-fit flex flex-col items-left gap-2 mb-2">
           <p className="text-primary-white text-[1.5625rem] font-semibold tracking-wide text-center">
             Welcome to
@@ -48,20 +48,20 @@ const HeroSection = () => {
         </div>
 
         <div className="relative flex items-start gap-3 mb-4">
-          <h1 className="text-primary-yellow text-6xl font-bold leading-tight">
+          <h1 className="text-primary-yellow text-7xl font-bold leading-tight">
             Agbani Farms
           </h1>
           <img
             src={LeafIcon}
             alt="Leaf Icon"
-            className="absolute h-12 -top-5 right-12"
+            className="absolute h-12 -top-5 right-22"
           />
         </div>
 
-        <p className="text-white text-base font-normal leading-relaxed mb-8">
-          Pioneering a new standard in agriculture, where sustainable practices
-          meet economic viability to create a positive impact on the environment
-          and the economy, from soil to market.
+        <p className="text-white text-xl font-medium font-livvic mb-8">
+          Pioneering a new standard in agriculture, where<br/> sustainable practices
+          meet economic viability to create <br /> a positive impact on the environment
+          and the economy,<br/> from soil to market.
         </p>
 
         <Link

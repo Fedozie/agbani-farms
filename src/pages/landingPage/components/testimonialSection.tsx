@@ -70,31 +70,25 @@ const TestimonialsSection = () => {
 
   return (
     <div className="relative w-full bg-[#3D5E3F] py-20 px-16 overflow-hidden">
+      <div className="absolute top-0 right-0 w-20 h-40 rounded-bl-md bg-accent-green"></div>
+      <div className="absolute top-28 right-8 w-20 h-20 rounded-md bg-accent-white"></div>
 
-      {/* Decorative corner squares */}
-      {/* <div className="absolute top-6 left-6 flex flex-col gap-2">
-        <div className="w-10 h-10 rounded-lg bg-[#4A6E4C]" />
-        <div className="w-6 h-6 rounded-lg bg-[#4A6E4C] ml-2" />
-      </div>
-      <div className="absolute top-6 right-6 flex flex-col gap-2 items-end">
-        <div className="w-10 h-10 rounded-lg bg-[#4A6E4C]" />
-        <div className="w-6 h-6 rounded-lg bg-[#4A6E4C] mr-2" />
-      </div> */}
+      <div className="absolute top-0 left-0 w-20 h-40 rounded-br-md bg-accent-green"></div>
+      <div className="absolute top-28 left-8 w-20 h-20 rounded-md bg-accent-white"></div>
 
-      {/* Header */}
       <div className="flex flex-col items-center mb-16">
-        <p className="text-white text-xs font-semibold tracking-[0.2em] uppercase mb-4">
+        <p className="text-white text-xl font-normal uppercase mb-4">
           Our Testimonials
         </p>
-        <h2 className="text-white text-5xl font-extrabold text-center">
+        <h2 className="text-white text-[3.125rem] font-bold text-center">
           What Customers are Talking About
         </h2>
       </div>
 
-      {/* Cards + arrows row */}
+      
       <div className="relative w-[70%] mx-auto flex items-center justify-between gap-6">
 
-        {/* Left arrow */}
+        
         <button
           onClick={prevSlide}
           className="absolute -left-4 z-10 w-12 h-12 rounded-full bg-primary-yellow text-[#1A1A1A] flex items-center justify-center hover:bg-yellow-400 transition-all duration-300 cursor-pointer shadow-lg"

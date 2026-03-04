@@ -47,7 +47,7 @@ const ServicesSection = () => {
 
         {/* Content */}
         <div className="relative z-10 flex flex-col">
-          <p className="text-white text-xl font-normal tracking-[0.2em] uppercase mb-4">
+          <p className="text-white text-xl font-normal uppercase mb-4 font-livvic">
             Modern Agricultural Services
           </p>
 
