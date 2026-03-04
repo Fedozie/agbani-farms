@@ -1,4 +1,5 @@
 import { DiscoverMeLogo } from "../assets";
+import { Link } from "react-router-dom";
 
 const DiscoverMore = () => {
   return (
@@ -25,9 +26,12 @@ const DiscoverMore = () => {
         </p>
       </div>
       <div className="relative z-10">
-        <button className="bg-primary-yellow text-[#1A1A1A] px-6 py-3 rounded-md cursor-pointer transition delay-100 duration-300 ease-in-out hover:bg-transparent">
+        <Link
+          to="/"
+          className="inline-block bg-primary-yellow text-[#1A1A1A] text-sm font-semibold tracking-widest uppercase px-8 py-4 rounded-2xl transition duration-300 ease-in-out hover:bg-transparent hover:text-primary-yellow border border-transparent hover:border-primary-yellow"
+        >
           Discover More
-        </button>
+        </Link>
       </div>
     </div>
   );

@@ -14,7 +14,7 @@ const IntroductionSection = () => {
       style={{
         backgroundImage: `url('${IntroBgImg}')`,
         backgroundSize: "500px",
-        backgroundPosition: "right bottom",
+        backgroundPosition: "right 120%",
         backgroundRepeat: "no-repeat",
       }}
     >

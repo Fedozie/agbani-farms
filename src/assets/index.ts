@@ -1,5 +1,6 @@
 import BgImage from "./backgroundFooter.png";
 import DiscoverMeLogo from "./discoverMeIcon.png";
+import CropsIconLogo from "./cropsIcon.png";
 import Logo from "./logo.png";
 import UnderlineImg from "./underline.png";
 import LandingHeroOne from "./landingHeroOne.png";
@@ -7,11 +8,15 @@ import LandingHeroTwo from "./landingHeroTwo.png";
 import LeafIcon from "./leafIcon.png";
 import IntroBgImg from "./backgroundIntro.png";
 import IntroSectionImg from "./introSectionImg.png";
-import IntroMoneyIcon from "./introsectionMoneyIcon.png"
+import IntroMoneyIcon from "./introsectionMoneyIcon.png";
+import ServicesImg from "./servicesImg.png";
+import ProjectSectionBg from "./projectsSectionBg.png";
+import TopographyBg from "./topographyBg.png"
 
 export {
   BgImage,
   DiscoverMeLogo,
+  CropsIconLogo,
   Logo,
   UnderlineImg,
   LandingHeroOne,
@@ -19,5 +24,8 @@ export {
   LeafIcon,
   IntroBgImg,
   IntroSectionImg,
-  IntroMoneyIcon
+  IntroMoneyIcon,
+  ServicesImg,
+  ProjectSectionBg,
+  TopographyBg
 };
