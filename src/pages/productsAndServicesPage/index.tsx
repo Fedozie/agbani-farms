@@ -1,9 +1,12 @@
 
-
+import { HeroSection, MainSection } from "./components";
 
 const ProductsAndServicesPage = () => {
   return (
-    <section></section>
+    <section>
+      <HeroSection />
+      <MainSection />
+    </section>
   );
 }
  

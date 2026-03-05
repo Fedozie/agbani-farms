@@ -11,7 +11,13 @@ import IntroSectionImg from "./introSectionImg.png";
 import IntroMoneyIcon from "./introsectionMoneyIcon.png";
 import ServicesImg from "./servicesImg.png";
 import ProjectSectionBg from "./projectsSectionBg.png";
-import TopographyBg from "./topographyBg.png"
+import TopographyBg from "./topographyBg.png";
+import ProductServicesHeroBg from "./productAndServicesBg.png";
+import ProductProcessor from "./foodProcessor.png";
+import ProductLivestock from "./livestock.png";
+import ProductForestry from "./forestry.png";
+import ProductStyle from "./productStyle.png";
+import AboutUsHeroBg from "./aboutUsHeroImg.png"
 
 export {
   BgImage,
@@ -27,5 +33,11 @@ export {
   IntroMoneyIcon,
   ServicesImg,
   ProjectSectionBg,
-  TopographyBg
+  TopographyBg,
+  ProductServicesHeroBg,
+  ProductProcessor,
+  ProductForestry,
+  ProductLivestock,
+  ProductStyle,
+  AboutUsHeroBg
 };
