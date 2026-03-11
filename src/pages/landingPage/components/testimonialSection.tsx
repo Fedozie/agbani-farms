@@ -69,29 +69,29 @@ const TestimonialsSection = () => {
   );
 
   return (
-    <div className="relative w-full bg-[#3D5E3F] py-20 px-16 overflow-hidden">
-      <div className="absolute top-0 right-0 w-20 h-40 rounded-bl-md bg-accent-green"></div>
-      <div className="absolute top-28 right-8 w-20 h-20 rounded-md bg-accent-white"></div>
+    <div className="relative w-full bg-[#3D5E3F] py-32 px-10 overflow-hidden lg:py-20">
+      <div className="absolute top-0 right-0 w-10 lg:w-20 h-40 rounded-bl-md bg-accent-green"></div>
+      <div className="absolute top-28 -right-2 lg:right-8 w-20 h-20 rounded-md bg-accent-white"></div>
 
-      <div className="absolute top-0 left-0 w-20 h-40 rounded-br-md bg-accent-green"></div>
-      <div className="absolute top-28 left-8 w-20 h-20 rounded-md bg-accent-white"></div>
+      <div className="absolute top-0 left-0 w-10 lg:w-20 h-40 rounded-br-md bg-accent-green"></div>
+      <div className="absolute top-28 -left-4 lg:left-8 w-20 h-20 rounded-md bg-accent-white"></div>
 
       <div className="flex flex-col items-center mb-16">
-        <p className="text-white text-xl font-normal uppercase mb-4">
+        <p className="text-white text-base lg:text-xl font-normal uppercase mb-4">
           Our Testimonials
         </p>
-        <h2 className="text-white text-[3.125rem] font-bold text-center">
+        <h2 className="text-white text-3xl lg:text-[3.125rem] font-bold text-center">
           What Customers are Talking About
         </h2>
       </div>
 
       
-      <div className="relative w-[70%] mx-auto flex items-center justify-between gap-6">
+      <div className="relative w-[70%] mx-auto flex flex-col items-center justify-between gap-6">
 
         
         <button
           onClick={prevSlide}
-          className="absolute -left-4 z-10 w-12 h-12 rounded-full bg-primary-yellow text-[#1A1A1A] flex items-center justify-center hover:bg-yellow-400 transition-all duration-300 cursor-pointer shadow-lg"
+          className="absolute -bottom-20 lg:bottom-0 left-10 lg:-left-4 z-10 w-12 h-12 rounded-full bg-primary-yellow text-[#1A1A1A] flex items-center justify-center hover:bg-yellow-400 transition-all duration-300 cursor-pointer shadow-lg"
         >
           <FaArrowLeft />
         </button>
@@ -115,7 +115,7 @@ const TestimonialsSection = () => {
         {/* Right arrow */}
         <button
           onClick={nextSlide}
-          className="absolute -right-4 z-10 w-12 h-12 rounded-full bg-primary-yellow text-[#1A1A1A] flex items-center justify-center hover:bg-yellow-400 transition-all duration-300 cursor-pointer shadow-lg"
+          className="absolute -bottom-20 lg:bottom-0 right-10 lg:-right-4 z-10 w-12 h-12 rounded-full bg-primary-yellow text-[#1A1A1A] flex items-center justify-center hover:bg-yellow-400 transition-all duration-300 cursor-pointer shadow-lg"
         >
           <FaArrowRight />
         </button>

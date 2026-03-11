@@ -32,18 +32,18 @@ const Footer: React.FC = () => {
     { name: "New Projects", link: "/projects" },
     { name: "Our Services", link: "/services" },
     { name: "Testimonials", link: "/testimonials" },
-    { name: "About Us", link: "/abou-us" },
+    { name: "About Us", link: "/about-us" },
     { name: "Contact Us", link: "/contact-us" },
   ];
 
   return (
     <footer className="w-full bg-primary-green text-white ">
-      <div className="w-full flex justify-between p-16">
+      <div className="w-full flex flex-col lg:flex-row lg:justify-between p-10 lg:p-20">
         <div>
           <p className="text-primary-white text-[2.5rem] font-bold mb-4">
             Agbani Farms
           </p>
-          <p className="text-primary-white text-lg font-normal mb-6">
+          <p className="text-primary-white text-base lg:text-lg font-normal mb-6">
             Agbani Farms is a forward-thinking agribusiness committed
             <br />
             to sustainable farming, quality production, and <br /> delivering
@@ -51,7 +51,7 @@ const Footer: React.FC = () => {
             communities and support food security.
           </p>
           <div className="bg-primary-white h-px w-full"></div>
-          <div className="flex justify-start items-center gap-6 mt-6">
+          <div className="hidden lg:flex lg:justify-start lg:items-center lg:gap-6 lg:mt-6">
             {socials.map((social, index) => (
               <Link
                 to={social.link}
@@ -64,7 +64,7 @@ const Footer: React.FC = () => {
           </div>
         </div>
 
-        <div className="flex gap-10 mr-20">
+        <div className="flex flex-col lg:flex-row gap-10 lg:mr-20">
           <div>
             <p className="text-xl font-semibold py-4">Useful Links</p>
             <ul>
@@ -77,13 +77,24 @@ const Footer: React.FC = () => {
               ))}
             </ul>
           </div>
-          <div className="flex flex-col w-80">
+          <div className="flex flex-col w-full lg:w-80">
             <p className="text-xl font-semibold py-4">Newsletter</p>
             <p className="mb-4">
               Subscribe to our weekly Newsletter and <br /> receive updates via
               email.
             </p>
             <SubscribeEmail />
+            <div className="flex justify-start items-center gap-6 mt-6">
+            {socials.map((social, index) => (
+              <Link
+                to={social.link}
+                key={index}
+                className="transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 duration-300 text-2xl "
+              >
+                {social.icon}
+              </Link>
+            ))}
+          </div>
           </div>
         </div>
       </div>

@@ -1,12 +1,13 @@
 
-import { HeroSection, } from "./components";
+import { HeroSection, CardsSection, MainSection} from "./components";
 
 
 const ContactUsPage = () => {
   return (
     <section>
-      <HeroSection />
-     
+      <HeroSection/>
+      <CardsSection/>
+      <MainSection/>
     </section>
   );
 };

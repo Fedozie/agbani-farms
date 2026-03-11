@@ -11,6 +11,13 @@ interface NewsCardProps {
 }
 
 const NewsCard = ({ image, title, date, author, link }: NewsCardProps) => {
+  const truncateTitle = (title: string) => {
+    if(title.length <= 40){
+      return title;
+    }
+    return title.substring(0, 40) + "...";
+  }
+
   return (
     <div className="rounded-2xl overflow-hidden bg-[#263C28] w-full h-100 flex flex-col transition-all duration-300 ease-in-out hover:-translate-y-3 border-2 border-transparent hover:border-primary-yellow group">
       {/* Image container */}
@@ -32,7 +39,7 @@ const NewsCard = ({ image, title, date, author, link }: NewsCardProps) => {
         </div>
 
         <p className="text-white text-lg font-bold leading-snug mb-4 flex-1 line-clamp-3">
-          {title}
+          {truncateTitle(title)}
         </p>
 
         <Link

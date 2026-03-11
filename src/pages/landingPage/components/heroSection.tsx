@@ -35,8 +35,8 @@ const HeroSection = () => {
 
       <div className="absolute inset-0 bg-black/30" />
 
-      <div className="relative z-10 px-16 py-20 w-[40%]">
-        <div className="relative w-fit flex flex-col items-left gap-2 mb-2">
+      <div className="relative z-10 px-4 py-20 w-full flex flex-col items-center lg:w-[50%] lg:px-20 lg:items-start">
+        <div className="relative w-fit flex flex-col items-left gap-2 mb-5 lg:mb-2">
           <p className="text-primary-white text-[1.5625rem] font-semibold tracking-wide text-center">
             Welcome to
           </p>
@@ -47,21 +47,28 @@ const HeroSection = () => {
           />
         </div>
 
-        <div className="relative flex items-start gap-3 mb-4">
-          <h1 className="text-primary-yellow text-7xl font-bold leading-tight">
+        <div className=" flex items-start gap-3 mb-4">
+          <h1 className="relative text-primary-yellow text-[2.5rem] lg:text-7xl font-bold leading-tight">
             Agbani Farms
+            <img
+              src={LeafIcon}
+              alt="Leaf Icon"
+              className="absolute h-12 -top-7 -right-7 lg:-right-5 lg:-top-5"
+            />
           </h1>
-          <img
-            src={LeafIcon}
-            alt="Leaf Icon"
-            className="absolute h-12 -top-5 right-22"
-          />
         </div>
 
-        <p className="text-white text-xl font-medium font-livvic mb-8">
-          Pioneering a new standard in agriculture, where<br/> sustainable practices
-          meet economic viability to create <br /> a positive impact on the environment
-          and the economy,<br/> from soil to market.
+        <p className="hidden text-white text-xl font-medium font-livvic mb-8 lg:text-left lg:block">
+          Pioneering a new standard in agriculture, where
+          <br /> sustainable practices meet economic viability to create <br />{" "}
+          a positive impact on the environment and the economy,
+          <br /> from soil to market.
+        </p>
+
+        <p className=" text-white text-lg font-medium font-livvic mb-8 text-center lg:text-left lg:hidden">
+          Pioneering a new standard in agriculture, where
+          sustainable practices meet economic viability to create
+          a positive impact on the environment and the economy,from soil to market.
         </p>
 
         <Link

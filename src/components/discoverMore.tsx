@@ -1,27 +1,27 @@
-import { DiscoverMeLogo } from "../assets";
+import { DiscoverMeLogo, StatementsBgImg } from "../assets";
 import { Link } from "react-router-dom";
 
 const DiscoverMore = () => {
   return (
-    <div
-      className="relative w-full bg-primary-green py-16 px-32 flex justify-between items-center"
-      style={{
-        backgroundImage: `url('/assets/backgroundImage.png')`,
-        backgroundSize: "cover",
-        backgroundPosition: "center",
-        backgroundRepeat: "no-repeat",
-      }}
-    >
+    <div className="relative w-full bg-primary-yellow/40 lg:bg-primary-green py-10 px-10 lg:py-20 lg:px-32 flex flex-col lg:flex-row justify-between items-center">
       <div
         className="absolute inset-0"
         style={{
           background: "linear-gradient(to right, #F8CC77, transparent)",
         }}
       />
+      <div
+        className="absolute inset-0 opacity-20 "
+        style={{
+          backgroundImage: `url(${StatementsBgImg})`,
+          backgroundSize: "cover",
+          backgroundPosition: "center",
+        }}
+      />
 
-      <div className="relative z-10 flex flex-row items-center gap-10">
+      <div className="relative z-10 flex flex-col lg:flex-row items-center gap-10">
         <img src={DiscoverMeLogo} alt="Logo" loading="lazy" className="h-20" />
-        <p className="text-[2.5rem] font-normal text-text-green">
+        <p className="text-[2.5rem] font-medium text-center text-text-green font-akronim italic lg:text-left">
           We are a Leader in the Agriculture Market
         </p>
       </div>

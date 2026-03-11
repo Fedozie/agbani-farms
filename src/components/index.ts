@@ -6,3 +6,6 @@ export * from "./layout";
 export * from "./newsCard";
 export * from "./projectCard";
 export * from "./testimonialCard";
+export * from "./input";
+export * from "./textarea";
+export * from "./articleCard";

@@ -94,7 +94,7 @@ const NewsSection = () => {
   return (
     <div className="w-full flex flex-col">
       {/* Top half — dark green with background image overlay */}
-      <div className="relative w-full bg-[#334B35] py-20 px-16 overflow-hidden">
+      <div className="relative w-full bg-green-bg px-10 py-10 lg:py-20 lg:px-16 overflow-hidden">
         {/* Background image at reduced opacity */}
         <div
           className="absolute inset-0 z-0 opacity-10"
@@ -105,22 +105,21 @@ const NewsSection = () => {
             backgroundRepeat: "no-repeat",
           }}
         />
-        <div className="bg-[#263C28] h-1/2 w-full absolute top-0 left-0">
-        </div>
+        <div className="bg-[#263C28] h-1/2 w-full absolute top-0 left-0"></div>
 
         <div className="relative z-10">
           {/* Header */}
           <div className="flex flex-col items-center mb-12">
-            <p className="text-white text-xl font-normal uppercase mb-4">
+            <p className="text-white text-base font-normal uppercase mb-4 lg:text-xl">
               From the Blog
             </p>
-            <h2 className="text-white text-[3.125rem] font-bold">
+            <h2 className="text-white text-3xl lg:text-[3.125rem]font-bold">
               News & Articles
             </h2>
           </div>
 
           {/* Cards grid */}
-          <div className="w-[70%] flex justify-between mx-auto gap-6">
+          <div className="w-[80%] lg:w-[70%] flex flex-col justify-center items-center lg:justify-between gap-6 lg:flex-row mx-auto">
             {currentNews.map((item, index) => (
               <NewsCard
                 key={index}
@@ -165,17 +164,14 @@ const NewsSection = () => {
       </div>
 
       {/* Bottom half — lighter green, partners */}
-      <div className="w-full bg-[#3D5E3F] py-12 px-16 border-t border-primary-white/60">
-        <p className="text-white/60 text-xl font-semibold tracking-[0.2em] uppercase text-center mb-10">
+      <div className="w-full bg-[#3D5E3F] py-10 px-10 lg:py-12 lg:px-16 border-t border-primary-white/60">
+        <p className="text-white/60 text-base lg:text-xl font-semibold tracking-[0.2em] uppercase text-center mb-10">
           Our Clients & Partners
         </p>
 
         <div className="flex items-center justify-between mx-24">
           {partners.map((partner, index) => (
-            <div
-              key={index}
-              className="flex items-center gap-2 opacity-60"
-            >
+            <div key={index} className="grid grid-cols-2 lg:flex lg:items-center gap-2 opacity-60">
               <img
                 src={ServicesImg}
                 alt={partner}

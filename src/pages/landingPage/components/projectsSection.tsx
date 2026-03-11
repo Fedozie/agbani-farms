@@ -103,7 +103,7 @@ const ProjectsSection = () => {
   const nextSlide = () => setCurrentSlide((prev) => (prev + 1) % totalSlides);
 
   return (
-    <div className="relative w-full bg-[#2D4A2F] py-20 px-16 overflow-hidden">
+    <div className="relative w-full bg-[#2D4A2F] p-10 lg:py-20 lg:px-20 overflow-hidden">
       <div
         className="absolute inset-0 z-0 opacity-10"
         style={{
@@ -116,15 +116,15 @@ const ProjectsSection = () => {
 
       <div className="relative z-10">
         <div className="flex flex-col items-center mb-12">
-          <p className="text-white text-xl font-semibold  uppercase mb-4">
+          <p className="text-white text-base lg:text-xl font-semibold  uppercase mb-4">
             Recently Completed Work
           </p>
-          <h2 className="text-white text-[3.125rem] font-bold mb-4">
+          <h2 className="text-white text-3xl lg:text-[3.125rem] font-bold mb-4">
             Explore Our Projects
           </h2>
         </div>
 
-        <div className="grid grid-cols-4 gap-6 mb-12">
+        <div className="grid gap-6 mb-12 lg:grid-cols-4 ">
           {currentProjects.map((project, index) => (
             <div
               key={index}

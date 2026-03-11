@@ -17,7 +17,13 @@ import ProductProcessor from "./foodProcessor.png";
 import ProductLivestock from "./livestock.png";
 import ProductForestry from "./forestry.png";
 import ProductStyle from "./productStyle.png";
-import AboutUsHeroBg from "./aboutUsHeroImg.png"
+import AboutUsHeroBg from "./aboutUsHeroImg.png";
+import StatementsBgImg from "./statementsBgImg.png";
+import PriorityImage1 from "./priorityImage1.png";
+import PriorityImage2 from "./priorityImage2.png";
+import PriorityImage3 from "./priorityImage3.png";
+import ContactUsHeroBg from "./contactUsBgHero.png";
+import NewsHeroBg from "./newsHeroBg.png";
 
 export {
   BgImage,
@@ -39,5 +45,11 @@ export {
   ProductForestry,
   ProductLivestock,
   ProductStyle,
-  AboutUsHeroBg
+  AboutUsHeroBg,
+  StatementsBgImg,
+  PriorityImage1,
+  PriorityImage2,
+  PriorityImage3,
+  ContactUsHeroBg,
+  NewsHeroBg
 };

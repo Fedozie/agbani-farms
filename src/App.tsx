@@ -36,6 +36,18 @@ const NotFoundPage = lazy(() =>
   })),
 );
 
+const NewsDetailsPage = lazy(() =>
+  import("./pages/newsPage/newsDetails").then((module) => ({
+    default: module.NewsDetails,
+  })),
+);
+
+const ProductDetailsPage = lazy(() =>
+  import("./pages/productsAndServicesPage/productsDetails").then((module) => ({
+    default: module.ProductDetails,
+  })),
+);
+
 function App() {
   const location = useLocation();
 
@@ -50,6 +62,14 @@ function App() {
           <Route
             path="/products-and-services"
             element={<ProductsAndServicesPage />}
+          />
+          <Route
+            path="/products-and-services/:slug"
+            element={<ProductDetailsPage />}
+          />
+          <Route
+            path="/news/:slug"
+            element={<NewsDetailsPage/>}
           />
         </Route>
 

@@ -39,7 +39,7 @@ const MainSection = () => {
   ];
 
   return (
-    <div className=" bg-[#334B35] py-16 px-56 divide-y divide-primary-yellow">
+    <div className=" bg-green-bg py-16 px-56 divide-y divide-primary-yellow">
       {products.map((product, index) => (
         <Product
           key={index}
@@ -64,7 +64,7 @@ export const Product = ({
 }: ProductProps) => {
   return (
     <div
-      className={`bg-[#334B35] py-32 flex justify-between items-center gap-8 max-md:mb-32 lg:gap-10 ${
+      className={`bg-green-bg py-32 flex justify-between items-center gap-8 max-md:mb-32 lg:gap-10 ${
         reverse ? "flex-col lg:flex-row-reverse" : "flex-col lg:flex-row"
       }`}
     >
