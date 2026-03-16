@@ -90,33 +90,33 @@ const Navbar = () => {
         />
       )}
 
-      {/* Mobile menu */}
-      {isOpen && (
-        <ul className="fixed top-[4.65rem] right-0 w-[50%] bg-[#263C28] h-full flex flex-col items-start gap-4 px-10 py-6 z-50 shadow-2xl transform transition-transform duration-300 ease-in-out lg:hidden">
-          {navLinks.map((link) => (
-            <li key={link.name} className="w-full">
-              <NavLink
-                to={link.path}
-                onClick={() => setIsOpen(false)}
-                className={({ isActive }) =>
-                  `relative block text-sm font-medium pb-2 w-fit  transition-colors duration-200 group
-                  ${isActive ? "text-white font-bold" : "text-gray-300 hover:text-white"}`
-                }
-              >
-                {({ isActive }) => (
-                  <>
-                    {link.name}
-                    <span
-                      className={`absolute left-0 bottom-0 h-0.5 bg-primary-yellow transition-all duration-300
-                        ${isActive ? "w-full" : "w-0 group-hover:w-full"}`}
-                    />
-                  </>
-                )}
-              </NavLink>
-            </li>
-          ))}
-        </ul>
-      )}
+      {/* Mobile menu - Always rendered, slides in/out */}
+      <ul className={`fixed top-[4.65rem] right-0 w-[70%] bg-[#263C28] h-full flex flex-col items-start gap-4 px-10 py-6 z-50 shadow-2xl transform transition-transform duration-300 ease-in-out lg:hidden ${
+        isOpen ? "translate-x-0" : "translate-x-full"
+      }`}>
+        {navLinks.map((link) => (
+          <li key={link.name} className="w-full">
+            <NavLink
+              to={link.path}
+              onClick={() => setIsOpen(false)}
+              className={({ isActive }) =>
+                `relative block text-sm font-medium pb-2 w-fit transition-colors duration-200 group
+                ${isActive ? "text-white font-bold" : "text-gray-300 hover:text-white"}`
+              }
+            >
+              {({ isActive }) => (
+                <>
+                  {link.name}
+                  <span
+                    className={`absolute left-0 bottom-0 h-0.5 bg-primary-yellow transition-all duration-300
+                      ${isActive ? "w-full" : "w-0 group-hover:w-full"}`}
+                  />
+                </>
+              )}
+            </NavLink>
+          </li>
+        ))}
+      </ul>
     </>
   );
 };

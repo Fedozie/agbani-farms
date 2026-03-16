@@ -39,7 +39,7 @@ const MainSection = () => {
   ];
 
   return (
-    <div className=" bg-green-bg py-16 px-56 divide-y divide-primary-yellow">
+    <div className=" bg-green-bg lg:py-16 lg:px-56 divide-y divide-primary-yellow">
       {products.map((product, index) => (
         <Product
           key={index}
@@ -64,19 +64,19 @@ export const Product = ({
 }: ProductProps) => {
   return (
     <div
-      className={`bg-green-bg py-32 flex justify-between items-center gap-8 max-md:mb-32 lg:gap-10 ${
+      className={`bg-green-bg px-10 pt-16 lg:py-32 flex justify-between items-center gap-8 lg:gap-10 ${
         reverse ? "flex-col lg:flex-row-reverse" : "flex-col lg:flex-row"
       }`}
     >
-      <div className="w-[50%]">
-        <p className="font-bold text-[3.125rem] md:text-4xl lg:text-5xl text-primary-white mb-6">
+      <div className="w-full lg:w-[50%]">
+        <p className="font-bold text-2xl md:text-4xl lg:text-[3.125rem] text-primary-white mb-6">
           {title}
         </p>
-        <p className="text-primary-white font-normal text-xl md:text-lg leading-relaxed">
+        <p className="text-primary-white font-normal text-base mb-6 md:text-lg leading-relaxed lg:mb-0">
           {description}
         </p>
       </div>
-      <div className="relative w-64 h-64 lg:w-108 lg:h-108 shrink-0 isolate">
+      <div className="relative w-64 h-64 mb-10 lg:w-108 lg:h-108 shrink-0 isolate">
         <img
           src={imageSrc}
           alt={imageAlt}

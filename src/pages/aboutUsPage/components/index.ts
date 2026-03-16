@@ -2,3 +2,8 @@ export * from "./heroSection";
 export * from "./mainSection";
 export * from "./statement";
 export * from "./priorityCard";
+export * from "./priorityCardMbl";
+export * from "./meetOurTeam";
+export * from "./teamCard";
+export * from "./valuesSection";
+export * from "./introSection"

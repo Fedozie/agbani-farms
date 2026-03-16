@@ -1,7 +1,7 @@
 import { lazy, Suspense } from "react";
 import "./App.css";
 import { Routes, Route, useLocation } from "react-router-dom";
-import { Layout } from "./components/layout";
+import { Layout, Loader} from "./components";
 
 const LandingPage = lazy(() =>
   import("./pages/landingPage").then((module) => ({
@@ -14,6 +14,7 @@ const ContactUsPage = lazy(() =>
     default: module.ContactUsPage,
   })),
 );
+
 const NewsPage = lazy(() =>
   import("./pages/newsPage").then((module) => ({ default: module.NewsPage })),
 );
@@ -52,7 +53,7 @@ function App() {
   const location = useLocation();
 
   return (
-    <Suspense fallback={<div>Loading...</div>}>
+    <Suspense fallback={<Loader/>}>
       <Routes location={location} key={location.pathname}>
         <Route element={<Layout />}>
           <Route path="/" element={<LandingPage />} />

@@ -4,7 +4,8 @@ import {
   ServicesSection,
   ProjectsSection,
   TestimonialsSection,
-  NewsSection
+  NewsSection,
+  CounterSection
 } from "./components";
 
 const LandingPage = () => {
@@ -13,6 +14,7 @@ const LandingPage = () => {
       <HeroSection />
       <IntroductionSection />
       <ServicesSection />
+      <CounterSection/>
       <ProjectsSection />
       <TestimonialsSection />
       <NewsSection/>

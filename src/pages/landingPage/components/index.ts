@@ -4,3 +4,4 @@ export * from "./servicesSection";
 export * from "./projectsSection";
 export * from "./newsSection";
 export * from "./testimonialSection";
+export * from "./counterSection";

@@ -71,11 +71,11 @@ const MainSection = () => {
 
   return (
     <section className="w-full bg-green-bg">
-      <div className="w-[70%] mx-auto font-bold text-[3.125rem] text-primary-white text-center py-8">
+      <div className="w-[70%] mx-auto font-bold text-2xl lg:text-[3.125rem] text-primary-white text-center py-8">
         Stay connected with exciting news and updates from our operations across
         Nigeria and Africa.
       </div>
-      <div className="mx-64 py-24 grid grid-cols-3 gap-x-6 gap-y-12 justify-between items-center">
+      <div className="py-10 px-10 flex flex-col gap-10 lg:mx-64 lg:py-24 lg:grid lg:grid-cols-3 lg:gap-x-6 lg:gap-y-12 lg:justify-between lg:items-center">
         {newsData.map((item, index) => (
           <NewsCard key={index} {...item} />
         ))}

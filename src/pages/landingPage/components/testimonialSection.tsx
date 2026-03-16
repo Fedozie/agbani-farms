@@ -76,7 +76,7 @@ const TestimonialsSection = () => {
       <div className="absolute top-0 left-0 w-10 lg:w-20 h-40 rounded-br-md bg-accent-green"></div>
       <div className="absolute top-28 -left-4 lg:left-8 w-20 h-20 rounded-md bg-accent-white"></div>
 
-      <div className="flex flex-col items-center mb-16">
+      <div className="flex flex-col items-center mb-16" id="testimonials">
         <p className="text-white text-base lg:text-xl font-normal uppercase mb-4">
           Our Testimonials
         </p>

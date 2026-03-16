@@ -9,3 +9,4 @@ export * from "./testimonialCard";
 export * from "./input";
 export * from "./textarea";
 export * from "./articleCard";
+export * from "./loader"

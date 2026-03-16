@@ -29,9 +29,9 @@ const Footer: React.FC = () => {
   ];
 
   const navLinks: { name: string; link: string }[] = [
-    { name: "New Projects", link: "/projects" },
-    { name: "Our Services", link: "/services" },
-    { name: "Testimonials", link: "/testimonials" },
+    { name: "New Projects", link: "/products-and-services" },
+    // { name: "Our Services", link: "/services" },
+    { name: "Testimonials", link: "/#testimonials" },
     { name: "About Us", link: "/about-us" },
     { name: "Contact Us", link: "/contact-us" },
   ];
@@ -100,7 +100,7 @@ const Footer: React.FC = () => {
       </div>
 
       <div className="w-full border-t border-primary-white p-16">
-        <p className="text-sm text-primary-white font-normal">Copyright &copy; Agbani Farms. All Right Reserved.</p>
+        <p className="text-sm text-primary-white font-normal text-center lg:text-left">Copyright &copy; Agbani Farms. All Right Reserved.</p>
       </div>
     </footer>
   );

@@ -2,28 +2,49 @@ import { Link } from "react-router-dom";
 import {
   IntroBgImg,
   ServicesImg,
-  DiscoverMeLogo,
   CropsIconLogo,
+  FishFarmingIcon,
+  LiveStockIcon,
+  ProcessingIcon,
+  TrainingIcon
 } from "../../../assets";
 
 const services = [
   {
-    icon: DiscoverMeLogo,
-    title: "Cassava & Palm oil Processing",
+    icon: FishFarmingIcon,
+    title: "Fish Farming",
     description:
-      "Turning locally sourced cassava and palm fruits into high-quality, value-added products through efficient, sustainable processing",
+      "One of South East Nigeria's largest fish farming operations with modern ponds and a full hatchery.",
+  },
+  {
+    icon: LiveStockIcon,
+    title: "Livestock Production",
+    description:
+      "Raising poultry, piggery, and other livestock under best-practice farm management.",
   },
   {
     icon: CropsIconLogo,
-    title: "Rice Farm & Processing",
+    title: "Crop Cultivation",
     description:
-      "Modern cultivation practices, post-harvest handling, milling, and storage.",
+      "Cultivating a wide range of food and cash crops using modern, sustainable methods.",
+  },
+  {
+    icon: ProcessingIcon,
+    title: "Process & Value Addition",
+    description:
+      "On-site processing and packaging facilities to deliver farm-fresh products to market.",
+  },
+  {
+    icon: TrainingIcon,
+    title: "Training & Consultancy",
+    description:
+      "World-class agribusiness training and expert consultancy for farmers and investors.",
   },
 ];
 
 const ServicesSection = () => {
   return (
-    <div className="w-full min-h-screen flex flex-col-reverse">
+    <div className="w-full min-h-screen flex flex-col-reverse lg:flex-row">
       <div className="w-full px-10 py-14 bg-[#5A7A4A] relative lg:w-1/2">
         <img
           src={ServicesImg}
@@ -50,7 +71,7 @@ const ServicesSection = () => {
         />
       </div>
 
-      <div className="relative bg-[#5A7A4A] w-full flex flex-col justify-center px-10 py-14  overflow-hidden lg:w-1/2 lg:px-28 lg:py-20">
+      <div className="relative bg-[#5A7A4A] w-full flex flex-col justify-center px-10 py-14 overflow-hidden lg:w-1/2  lg:px-20 lg:py-20">
         {/* Background image at reduced opacity */}
         <div
           className="hidden lg:absolute lg:inset-0 lg:z-0 lg:opacity-15 lg:block"
@@ -64,12 +85,12 @@ const ServicesSection = () => {
 
         {/* Content */}
         <div className="relative z-10 flex flex-col">
-          <p className="text-white text-xl text-center font-medium lg:font-normal uppercase mb-4 font-livvic lg:text-left">
-            Modern Agricultural Services
+          <p className="w-full text-white text-xl text-center font-medium lg:font-normal uppercase mb-4 font-livvic lg:text-left">
+            What we do
           </p>
 
           <h2 className="text-white text-center text-[2.125rem] lg:text-[3.125rem] font-bold leading-tight mb-10 lg:text-left">
-            Providing High Quality Services
+            An Integrated Agricultural Enterprise
           </h2>
 
           <div className="flex flex-col">

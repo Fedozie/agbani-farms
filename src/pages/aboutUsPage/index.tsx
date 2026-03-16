@@ -1,8 +1,11 @@
 import {
   HeroSection,
-  MainSection,
   Statement,
   PriorityCard,
+  PriorityCardMbl,
+  MeetOurTeam,
+  ValuesSection,
+  
 } from "./components";
 import { SlTarget } from "react-icons/sl";
 import { BsFillEyeFill } from "react-icons/bs";
@@ -71,8 +74,8 @@ const AboutUsPage = () => {
   return (
     <section>
       <HeroSection />
-      <MainSection />
-      <section className="relative p-20 w-[inherit] flex justify-between gap-20 bg-accent-green overflow-x-hidden">
+      
+      <section className="relative p-10 lg:p-20 w-[inherit] flex justify-between gap-20 bg-accent-green overflow-x-hidden">
         <div
           className="absolute inset-0 opacity-20"
           style={{
@@ -81,7 +84,7 @@ const AboutUsPage = () => {
             backgroundPosition: "center",
           }}
         />
-        <div className="relative z-10 flex justify-between gap-24 w-full">
+        <div className="relative z-10 flex flex-col justify-between gap-10 lg:flex-row lg:gap-24 w-full">
           {statements.map((statement, index) => (
             <Statement
               key={index}
@@ -92,19 +95,31 @@ const AboutUsPage = () => {
           ))}
         </div>
       </section>
-      <section className="bg-green-bg px-20 py-20 w-[inherit] flex flex-col items-center gap-10">
-        <p className="text-white text-[3.125rem] font-bold text-center py-10">
+      <ValuesSection/>
+      <MeetOurTeam/>
+      <section className="bg-green-bg px-10 py-10 lg:px-20 lg:py-20 w-[inherit] flex flex-col items-center gap-10">
+        <p className="text-white text-3xl lg:text-[3.125rem] font-bold text-center py-6 lg:py-10">
           Our Priorities
         </p>
-        <div className="w-full grid grid-cols-2 gap-x-8 gap-y-16">
+        <div className="w-full flex flex-col gap-10 lg:grid lg:grid-cols-2 lg:gap-x-8 lg:gap-y-16">
           {priorities.map((priority, index) => (
-            <div className="flex">
+            <div className="hidden lg:flex">
               <PriorityCard
                 key={index}
                 image={priority.image}
                 title={priority.title}
                 description={priority.description}
                 reverse={index % 2 !== 0}
+              />
+            </div>
+          ))}
+          {priorities.map((priority, index) => (
+            <div className="lg:hidden">
+              <PriorityCardMbl
+                key={index}
+                image={priority.image}
+                title={priority.title}
+                description={priority.description}
               />
             </div>
           ))}

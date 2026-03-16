@@ -24,6 +24,11 @@ import PriorityImage2 from "./priorityImage2.png";
 import PriorityImage3 from "./priorityImage3.png";
 import ContactUsHeroBg from "./contactUsBgHero.png";
 import NewsHeroBg from "./newsHeroBg.png";
+import MeetOurTeamBg from "./meetOurTeamBg.png";
+import FishFarmingIcon from "./fishFarmingIcon.png";
+import LiveStockIcon from "./livestockIcon.png";
+import ProcessingIcon from "./processingIcon.png";
+import TrainingIcon from "./trainingIcon.png";
 
 export {
   BgImage,
@@ -51,5 +56,10 @@ export {
   PriorityImage2,
   PriorityImage3,
   ContactUsHeroBg,
-  NewsHeroBg
+  NewsHeroBg,
+  FishFarmingIcon,
+  LiveStockIcon,
+  ProcessingIcon,
+  TrainingIcon,
+  MeetOurTeamBg
 };
