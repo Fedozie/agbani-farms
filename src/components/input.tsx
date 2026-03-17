@@ -33,7 +33,7 @@ const Input = (props: InputProps) => {
     <div className="relative mb-6">
       <label
         htmlFor={name}
-        className={`absolute left-4 transition-all duration-300 pointer-events-none
+        className={`absolute left-4 transition-all duration-300 ease-in-out pointer-events-none
         ${
           isActive
             ? "top-2 text-xs text-white pt-2"
@@ -60,7 +60,7 @@ const Input = (props: InputProps) => {
           onBlur: () => setIsFocused(false),
         })}
         onFocus={() => setIsFocused(true)}
-        className={`block w-full outline-0 bg-[#263C28] rounded-md text-lg text-white font-medium placeholder:text-white/70 px-4 pb-3 transition-all duration-300
+        className={`block w-full outline-0 bg-[#263C28] rounded-md text-lg text-white font-medium placeholder:text-white/70 px-4 pb-3 transition-all duration-300 ease-in-out
         ${isActive ? "pt-8" : "pt-4"}`}
       />
 

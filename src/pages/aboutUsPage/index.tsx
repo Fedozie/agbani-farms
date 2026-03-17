@@ -5,7 +5,7 @@ import {
   PriorityCardMbl,
   MeetOurTeam,
   ValuesSection,
-  
+  IntroSection
 } from "./components";
 import { SlTarget } from "react-icons/sl";
 import { BsFillEyeFill } from "react-icons/bs";
@@ -74,7 +74,7 @@ const AboutUsPage = () => {
   return (
     <section>
       <HeroSection />
-      
+      <IntroSection/>
       <section className="relative p-10 lg:p-20 w-[inherit] flex justify-between gap-20 bg-accent-green overflow-x-hidden">
         <div
           className="absolute inset-0 opacity-20"

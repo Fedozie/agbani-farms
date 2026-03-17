@@ -29,6 +29,8 @@ import FishFarmingIcon from "./fishFarmingIcon.png";
 import LiveStockIcon from "./livestockIcon.png";
 import ProcessingIcon from "./processingIcon.png";
 import TrainingIcon from "./trainingIcon.png";
+import OurStoryImg from "./ourStory.jpg";
+import AboutUsImg from "./aboutUsImg.png";
 
 export {
   BgImage,
@@ -61,5 +63,7 @@ export {
   LiveStockIcon,
   ProcessingIcon,
   TrainingIcon,
-  MeetOurTeamBg
+  MeetOurTeamBg,
+  OurStoryImg,
+  AboutUsImg
 };
