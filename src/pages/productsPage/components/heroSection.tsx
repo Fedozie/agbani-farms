@@ -11,7 +11,7 @@ const HeroSection = () => {
     >
       <div className="w-full flex justify-center items-center lg:w-[50%] text-primary-yellow">
         <p className="font-bold text-[2.5rem] text-center lg:text-[4rem] lg:text-left">
-          Products & Services
+          Products
         </p>
       </div>
     </section>

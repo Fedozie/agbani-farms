@@ -5,9 +5,10 @@ import { HiMenuAlt3, HiX } from "react-icons/hi";
 
 const navLinks = [
   { name: "Home", path: "/" },
-  { name: "Product & Services", path: "/products-and-services" },
+  { name: "Products", path: "/products" },
+  { name: "Services", path: "/services" },
   { name: "About Us", path: "/about-us" },
-  { name: "News", path: "/news" },
+  { name: "News & Media", path: "/news" },
   { name: "Contact Us", path: "/contact-us" },
 ];
 

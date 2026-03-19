@@ -1,7 +1,7 @@
 
 import { HeroSection, MainSection } from "./components";
 
-const ProductsAndServicesPage = () => {
+const ServicesPage = () => {
   return (
     <section>
       <HeroSection />
@@ -10,4 +10,4 @@ const ProductsAndServicesPage = () => {
   );
 }
  
-export {ProductsAndServicesPage};
+export {ServicesPage};

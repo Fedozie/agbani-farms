@@ -86,12 +86,10 @@ const TestimonialsSection = () => {
       </div>
 
       
-      <div className="relative w-[70%] mx-auto flex flex-col items-center justify-between gap-6">
-
-        
+      <div className="relative w-[70%] mx-auto flex flex-col lg:flex-row items-center justify-between gap-6">
         <button
           onClick={prevSlide}
-          className="absolute -bottom-20 lg:bottom-0 left-10 lg:-left-4 z-10 w-12 h-12 rounded-full bg-primary-yellow text-[#1A1A1A] flex items-center justify-center hover:bg-yellow-400 transition-all duration-300 cursor-pointer shadow-lg"
+          className="absolute -bottom-20 lg:top-1/2 left-10 lg:-left-4 z-10 w-12 h-12 rounded-full bg-primary-yellow text-[#1A1A1A] flex items-center justify-center hover:bg-yellow-400 transition-all duration-300 cursor-pointer shadow-lg"
         >
           <FaArrowLeft />
         </button>
@@ -115,7 +113,7 @@ const TestimonialsSection = () => {
         {/* Right arrow */}
         <button
           onClick={nextSlide}
-          className="absolute -bottom-20 lg:bottom-0 right-10 lg:-right-4 z-10 w-12 h-12 rounded-full bg-primary-yellow text-[#1A1A1A] flex items-center justify-center hover:bg-yellow-400 transition-all duration-300 cursor-pointer shadow-lg"
+          className="absolute -bottom-20 lg:top-1/2 right-10 lg:-right-4 z-10 w-12 h-12 rounded-full bg-primary-yellow text-[#1A1A1A] flex items-center justify-center hover:bg-yellow-400 transition-all duration-300 cursor-pointer shadow-lg"
         >
           <FaArrowRight />
         </button>

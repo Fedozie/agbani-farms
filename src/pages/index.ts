@@ -2,7 +2,8 @@ export * from "./landingPage";
 export * from "./aboutUsPage";
 export * from "./contactUsPage";
 export * from "./newsPage";
-export * from "./productsAndServicesPage";
+export * from "./servicesPage";
 export * from "./notFoundPage";
-export * from "./productsAndServicesPage/productsDetails";
-export * from "./newsPage/newsDetails"
+export * from "./servicesPage/productsDetails";
+export * from "./newsPage/newsDetails";
+export * from "./productsPage";
