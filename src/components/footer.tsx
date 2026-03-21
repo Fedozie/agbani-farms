@@ -29,8 +29,8 @@ const Footer: React.FC = () => {
   ];
 
   const navLinks: { name: string; link: string }[] = [
-    { name: "New Projects", link: "/products-and-services" },
-    // { name: "Our Services", link: "/services" },
+    { name: "Projects", link: "/products" },
+    { name: "Our Services", link: "/services" },
     { name: "Testimonials", link: "/#testimonials" },
     { name: "About Us", link: "/about-us" },
     { name: "Contact Us", link: "/contact-us" },
@@ -84,7 +84,7 @@ const Footer: React.FC = () => {
               email.
             </p>
             <SubscribeEmail />
-            <div className="flex justify-start items-center gap-6 mt-6">
+            <div className="flex justify-start items-center gap-6 mt-6 lg:hidden">
             {socials.map((social, index) => (
               <Link
                 to={social.link}

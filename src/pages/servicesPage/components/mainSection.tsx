@@ -132,8 +132,8 @@ const MainSection = () => {
   return (
     <section className="bg-green-bg w-full">
       <div className="text-center text-white w-[80%] mx-auto pt-10">
-        <p className="text-[3.125rem] font-bold">Our Services</p>
-        <p className="text-xl font-normal">
+        <p className="hidden text-[3.125rem] font-bold lg:block">Our Services</p>
+        <p className="hidden text-xl font-normal lg:block">
           At Agbani Farms Limited, we offer a comprehensive range of
           agricultural services spanning the entire food production and
           agribusiness value chain. Our services are designed to meet the
@@ -191,7 +191,7 @@ export const Product = ({
                 className="flex flex-row justify-start items-center gap-4 "
               >
                 <IoIosCheckmarkCircle size={32} color="#F7C35F" />
-                <p className="w-full text-xl text-white">{description}</p>
+                <p className="w-full text-base md:text-lg lg:text-xl text-white">{description}</p>
               </div>
             ))}
           </div>

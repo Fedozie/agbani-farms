@@ -1,9 +1,14 @@
 import { StatementsBgImg } from "../assets";
 import { Link } from "react-router-dom";
 
-const DiscoverMore = () => {
+interface CTAProps  {
+  heading: string;
+  text: string;
+}
+
+const DiscoverMore = ({heading, text}: CTAProps) => {
   return (
-    <div className="relative w-full bg-primary-yellow/40 lg:bg-primary-green py-10 px-10 lg:py-20 lg:px-32 flex flex-col lg:flex-col lg:gap-10 justify-between items-center">
+    <div className="relative w-full bg-primary-green py-10 px-10 lg:py-20 lg:px-32 flex flex-col lg:flex-col lg:gap-8 justify-between items-center">
       <div
         className="absolute inset-0"
         style={{
@@ -20,15 +25,12 @@ const DiscoverMore = () => {
       />
 
       <div className="z-10">
-        <p className="text-white font-bold text-[3.125rem]">Ready to Partner?</p>
+        <p className="text-white font-bold text-center text-[2rem] lg:text-[3.125rem]">{heading}</p>
       </div>
 
-      <div className="w-[60%] z-10">
+      <div className="w-full lg:w-[60%] z-10 py-10 lg:py-0">
         <p className="text-white font-medium text-center text-xl">
-          Whether you are a hospital seeking quality food supply, a farmer
-          seeking training, an investor exploring agribusiness opportunities, or
-          a food buyer looking for reliable produce; Agbani Farms is your
-          partner of choice.
+          {text}
         </p>
       </div>
 

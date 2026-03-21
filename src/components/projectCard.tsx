@@ -16,7 +16,7 @@ const ProjectCard = ({ image, title, date, link }: ProjectCardProps) => {
         <img src={image} alt={title} className="w-full h-48 object-cover" />
 
         {/* Date badge */}
-        <div className="absolute bottom-4 right-4 bg-primary-yellow text-[#1A1A1A] text-sm font-medium px-4 py-2 rounded-lg">
+        <div className="absolute bottom-0 right-0 bg-primary-yellow text-[#1A1A1A] text-sm font-medium px-4 py-2 rounded-tl-lg">
           {date}
         </div>
       </div>

@@ -45,7 +45,7 @@ const MeetOurTeam = () => {
           Meet Our Team
         </p>
       </div>
-      <div className="mx-auto w-[60%] my-4">
+      <div className="mx-auto lg:w-[60%] my-4">
         <p className="text-white text-center text-xl">
           Agbani Farms is powered by a passionate, experienced, and
           multi-disciplinary team of agricultural professionals, business
@@ -53,7 +53,7 @@ const MeetOurTeam = () => {
           shared commitment to excellence in farming and agribusiness.
         </p>
       </div>
-      <div className="w-[80%] grid grid-cols-2 gap-y-40 mx-auto my-10">
+      <div className=" grid gap-y-10 lg:grid-cols-2 lg:gap-y-40 lg:w-[80%] mx-auto my-10">
         {members.map((member, index) => (
           <div className="w-full h-full flex justify-center items-center">
             <TeamCard

@@ -1,5 +1,6 @@
 import { NewsCard } from "../../../components";
 import { ServicesImg } from "../../../assets";
+import { Gallery } from "./gallery";
 
 const MainSection = () => {
   const newsData = [
@@ -70,7 +71,7 @@ const MainSection = () => {
   ];
 
   return (
-    <section className="w-full bg-green-bg">
+    <section className="w-full bg-green-bg lg:px-20 lg:py-14">
       <div className="w-[70%] mx-auto font-bold text-2xl lg:text-[3.125rem] text-primary-white text-center py-8">
         Stay connected with exciting news and updates from our operations across
         Nigeria and Africa.
@@ -80,6 +81,14 @@ const MainSection = () => {
           <NewsCard key={index} {...item} />
         ))}
       </div>
+      <div className="w-full ">
+        <p className="text-white text-[3.125rem] font-bold">Photo Gallery</p>
+        <p className="text-white text-xl font-normal">
+          Explore our photo gallery for a visual journey through the operations,
+          people, and products of Agbani Farms Limited.
+        </p>
+      </div>
+      <Gallery/>
     </section>
   );
 };

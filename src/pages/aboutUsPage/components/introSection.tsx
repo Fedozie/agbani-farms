@@ -58,7 +58,7 @@ export const IntroPart = ({ story, title, image, description }: IntroProps) => {
         </p>
       </div>
       <div>
-        <p className="text-white lg:text-[3.125rem] font-bold leading-[100%]">
+        <p className="text-white text-xl lg:text-[3.125rem] font-bold leading-[100%]">
           {title}
         </p>
       </div>
@@ -71,7 +71,7 @@ export const IntroPart = ({ story, title, image, description }: IntroProps) => {
       </div>
       <div>
         {description.map((paragraph, index) => (
-          <p key={index} className="text-white text-xl leading-6.75 mb-4">
+          <p key={index} className="text-white text-lg lg:text-xl leading-6.75 mb-4 text-justify lg:text-left">
             {paragraph}
           </p>
         ))}

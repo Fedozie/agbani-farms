@@ -9,9 +9,16 @@ const HeroSection = () => {
         backgroundPosition: "center",
       }}
     >
-      <div className="w-full flex justify-center items-center lg:w-[50%] text-primary-yellow">
+      <div className="w-full flex flex-col gap-5 lg:flex-row justify-center items-center lg:w-[50%] text-primary-yellow">
         <p className="font-bold text-[2.5rem] text-center lg:text-[4rem] lg:text-left">
           Products
+        </p>
+        <p className="text-center text-white text-lg lg:hidden">
+          At Agbani Farms Limited, everything we produce is grown, raised, or
+          processed with care, quality, and your health in mind. From our fish
+          ponds to our crop fields and livestock units, we are committed to
+          delivering farm-fresh products that are safe, nutritious, and
+          responsibly produced.
         </p>
       </div>
     </section>

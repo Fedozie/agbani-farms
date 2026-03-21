@@ -9,9 +9,17 @@ const HeroSection = () => {
         backgroundPosition: "center",
       }}
     >
-      <div className="w-full flex justify-center items-center lg:w-[50%] text-primary-yellow">
+      <div className="w-full flex flex-col lg:flex-row justify-center items-center lg:w-[50%] text-primary-yellow">
         <p className="font-bold text-[2.5rem] text-center lg:text-[4rem] lg:text-left">
           Services
+        </p>
+        <p className="block text-center text-white font-normal text-lg lg:hidden">
+          At Agbani Farms Limited, we offer a comprehensive range of
+          agricultural services spanning the entire food production and
+          agribusiness value chain. Our services are designed to meet the
+          diverse needs of individuals, businesses, institutions, and
+          communities, whether you are looking for fresh farm produce, technical
+          expertise, or agribusiness education.
         </p>
       </div>
     </section>

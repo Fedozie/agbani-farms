@@ -5,7 +5,7 @@ import {
   PriorityCardMbl,
   MeetOurTeam,
   ValuesSection,
-  IntroSection
+  IntroSection,
 } from "./components";
 import { SlTarget } from "react-icons/sl";
 import { BsFillEyeFill } from "react-icons/bs";
@@ -15,6 +15,7 @@ import {
   PriorityImage2,
   PriorityImage3,
 } from "../../assets";
+import { DiscoverMore } from "../../components";
 
 const AboutUsPage = () => {
   const statements = [
@@ -74,7 +75,7 @@ const AboutUsPage = () => {
   return (
     <section>
       <HeroSection />
-      <IntroSection/>
+      <IntroSection />
       <section className="relative p-10 lg:p-20 w-[inherit] flex justify-between gap-20 bg-accent-green overflow-x-hidden">
         <div
           className="absolute inset-0 opacity-20"
@@ -95,8 +96,8 @@ const AboutUsPage = () => {
           ))}
         </div>
       </section>
-      <ValuesSection/>
-      <MeetOurTeam/>
+      <ValuesSection />
+      <MeetOurTeam />
       <section className="bg-green-bg px-10 py-10 lg:px-20 lg:py-20 w-[inherit] flex flex-col items-center gap-10">
         <p className="text-white text-3xl lg:text-[3.125rem] font-bold text-center py-6 lg:py-10">
           Our Priorities
@@ -125,6 +126,10 @@ const AboutUsPage = () => {
           ))}
         </div>
       </section>
+      <DiscoverMore
+        heading="Ready to Partner?"
+        text="Whether you are a hospital seeking quality food supply, a farmer seeking training, an investor exploring agribusiness opportunities, or a food buyer looking for reliable produce; Agbani Farms is your partner of choice."
+      />
     </section>
   );
 };

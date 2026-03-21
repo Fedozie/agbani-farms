@@ -116,7 +116,7 @@ const ProjectsSection = () => {
 
       <div className="relative z-10">
         <div className="flex flex-col items-center mb-12">
-          <p className="text-white text-base lg:text-xl font-semibold  uppercase mb-4">
+          <p className="text-white text-base lg:text-xl font-normal  uppercase mb-4">
             Recently Completed Work
           </p>
           <h2 className="text-white text-3xl lg:text-[3.125rem] font-bold mb-4">

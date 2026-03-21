@@ -59,16 +59,15 @@ const HeroSection = () => {
         </div>
 
         <p className="hidden text-white text-xl font-medium font-livvic mb-8 lg:text-left lg:block">
-          Pioneering a new standard in agriculture, where
-          <br /> sustainable practices meet economic viability to create <br />{" "}
-          a positive impact on the environment and the economy,
-          <br /> from soil to market.
+          Your trusted partner in integrated agriculture, premium
+          <br /> food production, and agribusiness development across <br />{" "}
+          Nigeria.
         </p>
 
         <p className=" text-white text-lg font-medium font-livvic mb-8 text-center lg:text-left lg:hidden">
-          Pioneering a new standard in agriculture, where
-          sustainable practices meet economic viability to create
-          a positive impact on the environment and the economy,from soil to market.
+          Your trusted partner in integrated <br /> agriculture, premium food{" "}
+          <br />
+          production, and agribusiness <br /> development across Nigeria.
         </p>
 
         <Link

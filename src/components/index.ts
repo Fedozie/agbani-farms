@@ -11,3 +11,5 @@ export * from "./textarea";
 export * from "./articleCard";
 export * from "./loader";
 export * from "./select";
+export * from "./photoCard";
+export * from "./errorResponse";

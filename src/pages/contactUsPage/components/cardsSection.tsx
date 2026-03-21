@@ -52,7 +52,7 @@ const CardsSection = () => {
           />
         ))}
       </div>
-      <div className="relative z-10 w-full my-10">
+      <div className="relative z-10 w-full lg:my-10">
         <ContactCard
           icon={<FiPhone size={40} color="#F7C35F" />}
           heading="Operating Hours"
@@ -67,7 +67,7 @@ export { CardsSection };
 
 const ContactCard = ({ icon, heading, text }: CardsProps) => {
   return (
-    <div className="z-5 bg-green-bg rounded-2xl flex justify-start items-center gap-4 py-8 px-4 w-auto">
+    <div className="z-5 mt-8 bg-green-bg rounded-2xl flex justify-start items-center gap-4 py-8 px-4 w-auto lg:mt-0">
       <div className="border border-primary-yellow p-4 rounded-full">
         {icon}
       </div>

@@ -2,6 +2,7 @@ import { useState } from "react";
 import { FaChevronLeft, FaChevronRight } from "react-icons/fa6";
 import { NewsCard } from "../../../components/newsCard";
 import { ServicesImg, TopographyBg } from "../../../assets";
+import Marquee from "react-fast-marquee";
 
 const news = [
   // Slide 1
@@ -113,7 +114,7 @@ const NewsSection = () => {
             <p className="text-white text-base font-normal uppercase mb-4 lg:text-xl">
               From the Blog
             </p>
-            <h2 className="text-white text-3xl lg:text-[3.125rem]font-bold">
+            <h2 className="text-white text-3xl lg:text-[3.125rem] font-bold">
               News & Articles
             </h2>
           </div>
@@ -169,9 +170,12 @@ const NewsSection = () => {
           Our Clients & Partners
         </p>
 
-        <div className="flex items-center justify-between mx-24">
+        <div className="hidden lg:flex lg:items-center lg:justify-between lg:mx-24">
           {partners.map((partner, index) => (
-            <div key={index} className="grid grid-cols-2 lg:flex lg:items-center gap-2 opacity-60">
+            <div
+              key={index}
+              className="grid grid-cols-2 lg:flex lg:items-center gap-2 opacity-60"
+            >
               <img
                 src={ServicesImg}
                 alt={partner}
@@ -182,6 +186,21 @@ const NewsSection = () => {
               </span>
             </div>
           ))}
+        </div>
+
+        <div className="w-full flex justify-between items-center py-4  lg:hidden">
+          <Marquee pauseOnHover={false} speed={100} direction="left">
+            {partners.map((partner, index) => (
+              <img
+                src={partner}
+                alt="Logos of Partners"
+                key={index}
+                className="max-w-auto mr-24 object-contain"
+                loading="lazy"
+                style={{ imageRendering: "crisp-edges" }}
+              />
+            ))}
+          </Marquee>
         </div>
       </div>
     </div>

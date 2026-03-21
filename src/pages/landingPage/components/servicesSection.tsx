@@ -89,7 +89,7 @@ const ServicesSection = () => {
             What we do
           </p>
 
-          <h2 className="text-white text-center text-[2.125rem] lg:text-[3.125rem] font-bold leading-tight mb-10 lg:text-left">
+          <h2 className="text-white text-center text-[1.8rem] lg:text-[3.125rem] font-bold leading-tight mb-10 lg:text-left">
             An Integrated Agricultural Enterprise
           </h2>
 

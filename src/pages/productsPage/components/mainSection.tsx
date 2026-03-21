@@ -121,10 +121,10 @@ const MainSection = () => {
   return (
     <section className="bg-green-bg w-full lg:px-20 lg:py-14">
       <div>
-        <p className="text-center text-white text-[3.125rem] font-bold">
+        <p className="hidden lg:block lg:text-center lg:text-white lg:text-[3.125rem] lg:font-bold">
           Our Products
         </p>
-        <p className="text-center text-white text-xl">
+        <p className="hidden lg:block lg:text-center lg:text-white lg:text-xl">
           At Agbani Farms Limited, everything we produce is grown, raised, or
           processed with care, quality, and your health in mind. From our fish
           ponds to our crop fields and livestock units, we are committed to
@@ -132,7 +132,7 @@ const MainSection = () => {
           responsibly produced.
         </p>
       </div>
-      <section className="mt-20">
+      <section className="pt-20 pb-10 divide-y-2 divide-primary-yellow">
         {productsArray.map((products, index) => (
           <MainCard
             key={index}
@@ -150,7 +150,7 @@ export { MainSection };
 
 export const MainCard = ({ title, cardImage, products }: MainCardProps) => {
   return (
-    <section className=" min-h-screen px-6 py-8 mb-16">
+    <section className="min-h-screen px-6 py-8 pb-16">
       <h1 className="text-white text-3xl md:text-4xl lg:text-[3.125rem] font-bold mb-8 tracking-tight">
         {title}
       </h1>
