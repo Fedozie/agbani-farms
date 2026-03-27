@@ -1,5 +1,5 @@
 import { StatementsBgImg } from "../assets";
-import { Link } from "react-router-dom";
+import { TransitionLink } from "./transitionLink";
 
 interface CTAProps  {
   heading: string;
@@ -35,12 +35,12 @@ const DiscoverMore = ({heading, text}: CTAProps) => {
       </div>
 
       <div className="relative z-10">
-        <Link
+        <TransitionLink
           to="/contact-us"
           className="inline-block bg-primary-yellow text-[#1A1A1A] text-sm font-semibold tracking-widest uppercase px-8 py-4 rounded-2xl transition duration-300 ease-in-out hover:bg-transparent hover:text-primary-yellow border border-transparent hover:border-primary-yellow"
         >
           Contact Us
-        </Link>
+        </TransitionLink>
       </div>
     </div>
   );

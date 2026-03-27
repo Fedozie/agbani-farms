@@ -7,6 +7,7 @@ import {
   FaYoutube,
 } from "react-icons/fa6";
 import { SubscribeEmail } from "./subscribeEmail";
+import { TransitionLink } from "./transitionLink";
 
 const Footer: React.FC = () => {
   const socials: { icon: React.ReactNode; link: string }[] = [
@@ -70,9 +71,9 @@ const Footer: React.FC = () => {
             <ul>
               {navLinks.map((link, index) => (
                 <li key={index} className="">
-                  <Link to={link.link} className="block mb-3">
+                  <TransitionLink to={link.link} className="block mb-3">
                     {link.name}
-                  </Link>
+                  </TransitionLink>
                 </li>
               ))}
             </ul>

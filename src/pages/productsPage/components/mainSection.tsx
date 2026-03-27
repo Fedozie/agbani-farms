@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+import { TransitionLink } from "../../../components/transitionLink";
 
 type Product = {
   id: number;
@@ -179,12 +179,12 @@ export const MainCard = ({ title, cardImage, products }: MainCardProps) => {
       </div>
 
       <div className="mt-10">
-        <Link
-          to="/"
+        <TransitionLink
+          to="/contact-us"
           className="inline-block bg-primary-yellow text-[#1A1A1A] text-sm font-semibold tracking-widest uppercase px-8 py-4 rounded-2xl transition duration-300 ease-in-out hover:bg-transparent hover:text-primary-yellow border border-transparent hover:border-primary-yellow"
         >
           Order Now
-        </Link>
+        </TransitionLink>
       </div>
     </section>
   );

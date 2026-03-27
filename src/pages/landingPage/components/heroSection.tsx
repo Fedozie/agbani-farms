@@ -1,8 +1,8 @@
 import { useState, useEffect } from "react";
-import { Link } from "react-router-dom";
 import { UnderlineImg, LeafIcon } from "../../../assets";
 import landingHeroOne from "../../../assets/landingHeroOne.png";
 import landingHeroTwo from "../../../assets/landingHeroTwo.png";
+import { TransitionLink } from "../../../components";
 
 const heroImages = [landingHeroOne, landingHeroTwo];
 
@@ -70,12 +70,12 @@ const HeroSection = () => {
           production, and agribusiness <br /> development across Nigeria.
         </p>
 
-        <Link
+        <TransitionLink
           to="/about-us"
           className="inline-block bg-primary-yellow text-[#1A1A1A] text-sm font-semibold tracking-widest uppercase px-8 py-4 rounded-2xl transition duration-300 ease-in-out hover:bg-transparent hover:text-primary-yellow border border-transparent hover:border-primary-yellow"
         >
           Discover More
-        </Link>
+        </TransitionLink>
       </div>
     </div>
   );

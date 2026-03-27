@@ -1,7 +1,7 @@
 import { lazy, Suspense } from "react";
 import "./App.css";
 import { Routes, Route, useLocation } from "react-router-dom";
-import { Layout, Loader } from "./components";
+import { Layout, Loader, } from "./components";
 
 const LandingPage = lazy(() =>
   import("./pages/landingPage").then((module) => ({

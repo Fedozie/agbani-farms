@@ -39,5 +39,14 @@ html {
 body {
   overflow-x: hidden;
   font-family: var(--font-livvic);
+  background: var(--color-primary-green); 
 }
 
+.page-transition-overlay {
+  position: fixed;
+  inset: 0;
+  background: var(--color-primary-green);
+  transform: translateY(100%);
+  z-index: 9999;
+  pointer-events: none;
+}

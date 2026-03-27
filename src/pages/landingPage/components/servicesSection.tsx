@@ -1,4 +1,3 @@
-import { Link } from "react-router-dom";
 import {
   IntroBgImg,
   ServicesImg,
@@ -8,6 +7,7 @@ import {
   ProcessingIcon,
   TrainingIcon
 } from "../../../assets";
+import { TransitionLink } from "../../../components";
 
 const services = [
   {
@@ -52,12 +52,12 @@ const ServicesSection = () => {
           className="rounded-xl w-full h-full object-cover"
         />
         <div className="flex justify-center items-center mt-10 lg:hidden">
-          <Link
+          <TransitionLink
             to="/products-and-services"
             className="inline-block bg-primary-yellow text-[#1A1A1A] text-sm font-semibold tracking-widest uppercase px-8 py-4 rounded-2xl transition duration-300 ease-in-out hover:bg-transparent hover:text-primary-yellow border border-transparent hover:border-primary-yellow"
           >
             Discover More
-          </Link>
+          </TransitionLink>
         </div>
 
         <div
@@ -120,12 +120,12 @@ const ServicesSection = () => {
           </div>
 
           <div className="hidden lg:flex lg:justify-start lg:items-start lg:mt-10 ">
-            <Link
+            <TransitionLink
               to="/about-us"
               className="inline-block bg-primary-yellow text-[#1A1A1A] text-sm font-semibold tracking-widest uppercase px-8 py-4 rounded-2xl transition duration-300 ease-in-out hover:bg-transparent hover:text-primary-yellow border border-transparent hover:border-primary-yellow"
             >
               Discover More
-            </Link>
+            </TransitionLink>
           </div>
         </div>
       </div>
