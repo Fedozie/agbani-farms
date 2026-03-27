@@ -121,7 +121,7 @@ const ServicesSection = () => {
 
           <div className="hidden lg:flex lg:justify-start lg:items-start lg:mt-10 ">
             <Link
-              to="/products-and-services"
+              to="/about-us"
               className="inline-block bg-primary-yellow text-[#1A1A1A] text-sm font-semibold tracking-widest uppercase px-8 py-4 rounded-2xl transition duration-300 ease-in-out hover:bg-transparent hover:text-primary-yellow border border-transparent hover:border-primary-yellow"
             >
               Discover More

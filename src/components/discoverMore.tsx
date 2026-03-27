@@ -36,7 +36,7 @@ const DiscoverMore = ({heading, text}: CTAProps) => {
 
       <div className="relative z-10">
         <Link
-          to="/"
+          to="/contact-us"
           className="inline-block bg-primary-yellow text-[#1A1A1A] text-sm font-semibold tracking-widest uppercase px-8 py-4 rounded-2xl transition duration-300 ease-in-out hover:bg-transparent hover:text-primary-yellow border border-transparent hover:border-primary-yellow"
         >
           Contact Us

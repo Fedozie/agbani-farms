@@ -72,11 +72,11 @@ const MainSection = () => {
 
   return (
     <section className="w-full bg-green-bg lg:px-20 lg:py-14">
-      <div className="w-[70%] mx-auto font-bold text-2xl lg:text-[3.125rem] text-primary-white text-center py-8">
-        Stay connected with exciting news and updates from our operations across
-        Nigeria and Africa.
-      </div>
-      <div className="py-10 px-10 flex flex-col gap-10 lg:mx-64 lg:py-24 lg:grid lg:grid-cols-3 lg:gap-x-6 lg:gap-y-12 lg:justify-between lg:items-center">
+      <p className="text-2xl lg:text-[3.125rem] font-bold text-white mt-12">News & Media</p>
+      <p className=" mx-auto font-normal text-lg lg:text-xl text-primary-white text-left">
+        Stay up to date with the latest news, events, milestones, and stories from Agbani Farms Limited. From training programme highlights to new product launches and community outreach activities, this is your window into the life and work of our farm.
+      </p>
+      <div className="py-10 flex flex-col gap-10 lg:py-24 lg:grid lg:grid-cols-3 lg:gap-x-6 lg:gap-y-12 lg:justify-between lg:items-center">
         {newsData.map((item, index) => (
           <NewsCard key={index} {...item} />
         ))}
