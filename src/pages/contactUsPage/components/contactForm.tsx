@@ -35,12 +35,12 @@ const ContactForm = () => {
     },
   });
 
-  const {
-    register,
-    handleSubmit,
-    reset,
-    formState: { errors },
-  } = methods;
+  // const {
+  //   register,
+  //   handleSubmit,
+  //   reset,
+  //   formState: { errors },
+  // } = methods;
 
   const servicesData = [
     { label: "Product Enquiry", value: "Product Enquiry" },

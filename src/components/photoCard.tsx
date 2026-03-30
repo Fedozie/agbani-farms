@@ -1,7 +1,6 @@
 const PhotoCard = ({
   image,
   title,
-  description,
   onClick,
 }: {
   image: string;
@@ -21,9 +20,8 @@ const PhotoCard = ({
           className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
         />
       </div>
-      <div className="bg-sec-green text-white p-5">
+      <div className="bg-[#39633B] text-white p-5">
         <h3 className="text-xl font-semibold mb-2">{title}</h3>
-        <p className="text-slate-300 text-sm">{description}</p>
       </div>
     </div>
   );

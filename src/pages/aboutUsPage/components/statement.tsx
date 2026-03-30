@@ -8,7 +8,7 @@ type StatementProps = {
 
 const Statement = ({image, title, description}:StatementProps) => {
   return (  
-    <div className="flex flex-col lg:flex-row items-start bg-green-bg/95 gap-6 lg:items-center py-16 px-10 rounded-2xl">
+    <div className="flex flex-col lg:flex-row items-start bg-green-bg/95 gap-6 lg:w-full lg:items-center py-16 px-10 rounded-2xl">
       <div>
         {image}
       </div>

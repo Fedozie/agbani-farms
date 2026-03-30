@@ -1,11 +1,11 @@
-import { HeroSection, FeaturedArticle, Recommendation } from "./components";
+import { HeroSection, } from "./components";
 
 const NewsDetails = () => {
   return (
     <section>
       <HeroSection/>
-      <FeaturedArticle/>
-      <Recommendation/>
+      {/* <FeaturedArticle/> */}
+      {/* <Recommendation/> */}
     </section>
   );
 }
