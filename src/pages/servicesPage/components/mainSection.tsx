@@ -191,7 +191,7 @@ export const Product = ({
                 className="flex flex-row justify-start items-center gap-4 "
               >
                 <IoIosCheckmarkCircle size={32} color="#F7C35F" />
-                <p className="w-full text-base md:text-lg lg:text-xl text-white">{description}</p>
+                <p className="w-full text-base md:text-lg lg:text-xl text-white my-2">{description}</p>
               </div>
             ))}
           </div>

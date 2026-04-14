@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import { UnderlineImg, LeafIcon } from "../../../assets";
-import landingHeroOne from "../../../assets/landingHeroOne.png";
-import landingHeroTwo from "../../../assets/landingHeroTwo.png";
+import landingHeroOne from "../../../assets/landingHeroOne.webp";
+import landingHeroTwo from "../../../assets/landingHeroTwo.webp";
 import { TransitionLink } from "../../../components";
 
 const heroImages = [landingHeroOne, landingHeroTwo];
