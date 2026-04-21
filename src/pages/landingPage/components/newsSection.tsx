@@ -84,8 +84,11 @@ const NewsSection = () => {
   const sectionRef = useRef(null);
   const subheadingRef = useRef(null);
   const headingRef = useRef(null);
-  const cardRefs = useRef([]);
+  const cardRefs = useRef<(HTMLDivElement | null)[]>([]);
   const hasAnimated = useRef(false);
+
+  const partnersSectionRef = useRef(null);
+  const partnerRefs = useRef<(HTMLDivElement | null)[]>([]);
 
   const totalSlides = Math.ceil(news.length / CARDS_PER_SLIDE);
 
@@ -100,7 +103,10 @@ const NewsSection = () => {
   const nextSlide = () =>
     setCurrentSlide((prev) => (prev + 1) % totalSlides);
 
-  const animateCards = (items) => {
+  const animateCards = () => {
+    const items = cardRefs.current.filter(Boolean) as HTMLDivElement[];
+    if (!items.length) return;
+
     gsap.fromTo(
       items,
       { opacity: 0, y: 40 },
@@ -115,7 +121,7 @@ const NewsSection = () => {
     );
   };
 
-  // Scroll animation
+  // News section scroll animation — fires once on enter
   useEffect(() => {
     if (!sectionRef.current) return;
 
@@ -124,7 +130,6 @@ const NewsSection = () => {
       start: "top 80%",
       once: true,
       onEnter: () => {
-        // Headings
         gsap.fromTo(
           [subheadingRef.current, headingRef.current],
           { opacity: 0, y: 30 },
@@ -137,20 +142,7 @@ const NewsSection = () => {
           }
         );
 
-        // Cards
-        gsap.fromTo(
-          cardRefs.current,
-          { opacity: 0, y: 40 },
-          {
-            opacity: 1,
-            y: 0,
-            duration: 0.7,
-            ease: "power2.out",
-            stagger: 0.15,
-            delay: 0.2,
-          }
-        );
-
+        animateCards();
         hasAnimated.current = true;
       },
     });
@@ -158,12 +150,40 @@ const NewsSection = () => {
     return () => trigger.kill();
   }, []);
 
-  // Slide animation
+  // Partners fade-in animation (large screen only)
+  useEffect(() => {
+    if (!partnersSectionRef.current) return;
+
+    const items = partnerRefs.current.filter(Boolean);
+    if (!items.length) return;
+
+    const trigger = ScrollTrigger.create({
+      trigger: partnersSectionRef.current,
+      start: "top 85%",
+      once: true,
+      onEnter: () => {
+        gsap.fromTo(
+          items,
+          { opacity: 0 },
+          {
+            opacity: 0.6,
+            duration: 2,
+            ease: "power2.out",
+            stagger: 0.12,
+          }
+        );
+      },
+    });
+
+    return () => trigger.kill();
+  }, []);
+
+  // Re-animate cards on slide change
   useEffect(() => {
     if (!hasAnimated.current) return;
-
-    const items = cardRefs.current;
-    animateCards(items);
+    // setTimeout gives React one tick to attach the new refs to the DOM
+    const timeout = setTimeout(animateCards, 0);
+    return () => clearTimeout(timeout);
   }, [currentSlide]);
 
   return (
@@ -186,7 +206,6 @@ const NewsSection = () => {
         />
 
         <div className="relative z-10">
-          {/* Header */}
           <div className="flex flex-col items-center mb-12">
             <p
               ref={subheadingRef}
@@ -205,26 +224,20 @@ const NewsSection = () => {
             </h2>
           </div>
 
-          {/* Cards */}
           <div className="w-[80%] lg:w-[70%] flex flex-col items-center gap-6 lg:flex-row mx-auto">
-            {(() => {
-              cardRefs.current = [];
-
-              return currentNews.map((item, index) => (
-                <div
-                  key={index}
-                  style={{ opacity: 0 }}
-                  ref={(el) => {
-                    cardRefs.current[index] = el;
-                  }}
-                >
-                  <NewsCard {...item} />
-                </div>
-              ));
-            })()}
+            {currentNews.map((item, index) => (
+              <div
+                key={index}
+                style={{ opacity: 0 }}
+                ref={(el) => {
+                  cardRefs.current[index] = el; // just overwrite the slot, no reset needed
+                }}
+              >
+                <NewsCard {...item} />
+              </div>
+            ))}
           </div>
 
-          {/* Controls */}
           <div className="flex flex-col items-center gap-4 mt-10">
             <div className="flex items-center gap-16 mb-10">
               <button
@@ -248,11 +261,7 @@ const NewsSection = () => {
                   key={index}
                   onClick={() => setCurrentSlide(index)}
                   className={`h-2 rounded-full transition-all duration-300
-                  ${
-                    index === currentSlide
-                      ? "w-6 bg-primary-yellow"
-                      : "w-2 bg-white/40"
-                  }`}
+                  ${index === currentSlide ? "w-6 bg-primary-yellow" : "w-2 bg-white/40"}`}
                 />
               ))}
             </div>
@@ -261,14 +270,25 @@ const NewsSection = () => {
       </div>
 
       {/* Bottom Section */}
-      <div className="w-full bg-[#3D5E3F] py-10 px-10 lg:py-12 lg:px-16 border-t border-primary-white/60">
+      <div
+        ref={partnersSectionRef}
+        className="w-full bg-[#3D5E3F] py-10 px-10 lg:py-12 lg:px-16 border-t border-primary-white/60"
+      >
         <p className="text-white/60 text-base lg:text-xl font-semibold tracking-[0.2em] uppercase text-center mb-10">
           Our Clients & Partners
         </p>
 
+        {/* Large screen — GSAP animated */}
         <div className="hidden lg:flex lg:items-center lg:justify-between lg:mx-24">
           {partners.map((partner, index) => (
-            <div key={index} className="flex items-center gap-2 opacity-60">
+            <div
+              key={index}
+              style={{ opacity: 0 }}
+              ref={(el) => {
+                partnerRefs.current[index] = el;
+              }}
+              className="flex items-center gap-2"
+            >
               <img
                 src={ServicesImg}
                 alt={partner}
@@ -281,6 +301,7 @@ const NewsSection = () => {
           ))}
         </div>
 
+        {/* Mobile — Marquee, untouched */}
         <div className="w-full flex justify-between items-center py-4 lg:hidden">
           <Marquee speed={100}>
             {partners.map((_, index) => (
