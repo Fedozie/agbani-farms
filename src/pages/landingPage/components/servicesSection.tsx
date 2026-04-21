@@ -11,6 +11,7 @@ import {
   TrainingIcon,
 } from "../../../assets";
 import { TransitionLink } from "../../../components";
+import { useInView } from "react-intersection-observer";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -50,6 +51,9 @@ const services = [
 const ServicesSection = () => {
   const serviceItemsRef = useRef<(HTMLDivElement | null)[]>([]);
   const serviceImgRef = useRef<HTMLImageElement | null>(null);
+
+  const { ref, inView } = useInView({ triggerOnce: true });
+
 
   useEffect(() => {
     const items = serviceItemsRef.current.filter(Boolean);
@@ -95,6 +99,7 @@ const ServicesSection = () => {
           src={ServicesImg}
           alt="Farmer working in the field"
           className="rounded-xl w-full h-full object-cover"
+          loading="lazy"
           ref={serviceImgRef}
         />
         <div className="flex justify-center items-center mt-10 lg:hidden">
@@ -107,9 +112,10 @@ const ServicesSection = () => {
         </div>
 
         <div
+        ref={ref}
           className="absolute inset-0 z-0 opacity-15 lg:hidden"
           style={{
-            backgroundImage: `url('${IntroBgImg}')`,
+            backgroundImage: inView ? `url('${IntroBgImg}')` : "none",
             backgroundSize: "500px",
             backgroundPosition: "right 120%",
             backgroundRepeat: "no-repeat",
@@ -122,7 +128,7 @@ const ServicesSection = () => {
         <div
           className="hidden lg:absolute lg:inset-0 lg:z-0 lg:opacity-15 lg:block"
           style={{
-            backgroundImage: `url('${IntroBgImg}')`,
+            backgroundImage: inView ? `url('${IntroBgImg}')` : "none",
             backgroundSize: "500px",
             backgroundPosition: "right 120%",
             backgroundRepeat: "no-repeat",
@@ -151,6 +157,7 @@ const ServicesSection = () => {
                   <img
                     src={service.icon}
                     alt={service.title}
+                    loading="lazy"
                     className="w-16 h-16"
                   />
                   <div>

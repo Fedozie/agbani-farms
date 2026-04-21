@@ -4,6 +4,7 @@ import { ProjectCard } from "../../../components";
 import { ServicesImg, ProjectSectionBg } from "../../../assets";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { useInView } from "react-intersection-observer";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -88,9 +89,11 @@ const ProjectsSection = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
   const cardRefs = useRef<(HTMLDivElement | null)[]>([]);
   const sectionRef = useRef<HTMLDivElement | null>(null);
-  const subheadingRef = useRef<HTMLParagraphElement | null>(null); // 👈
-  const headingRef = useRef<HTMLHeadingElement | null>(null);      // 👈
+  const subheadingRef = useRef<HTMLParagraphElement | null>(null);
+  const headingRef = useRef<HTMLHeadingElement | null>(null);  
   const hasAnimated = useRef(false);
+
+  const { ref, inView } = useInView({ triggerOnce: true });
 
   const totalSlides = Math.ceil(projects.length / CARDS_PER_SLIDE);
 
@@ -182,8 +185,9 @@ const ProjectsSection = () => {
     >
       <div
         className="absolute inset-0 z-0 opacity-10"
+        ref={ref}
         style={{
-          backgroundImage: `url('${ProjectSectionBg}')`,
+          backgroundImage: inView ? `url('${ProjectSectionBg}')` : "none",
           backgroundSize: "500px",
           backgroundPosition: "right bottom",
           backgroundRepeat: "no-repeat",

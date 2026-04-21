@@ -292,6 +292,7 @@ const NewsSection = () => {
               <img
                 src={ServicesImg}
                 alt={partner}
+                loading="lazy"
                 className="w-6 h-6 object-contain grayscale"
               />
               <span className="text-white font-semibold text-lg">
@@ -309,6 +310,7 @@ const NewsSection = () => {
                 key={index}
                 src={ServicesImg}
                 alt="Partner logo"
+                loading="lazy"
                 className="mr-24"
               />
             ))}

@@ -6,6 +6,8 @@ interface TestimonialCardProps {
   testimonial: string;
 }
 
+import { useInView } from "react-intersection-observer";
+
 const TestimonialCard = ({
   backgroundImage,
   profileImage,
@@ -13,11 +15,14 @@ const TestimonialCard = ({
   description,
   testimonial,
 }: TestimonialCardProps) => {
+  const { ref, inView } = useInView({ triggerOnce: true });
+
   return (
     <div
+      ref={ref}
       className="relative w-72 h-105 rounded-3xl shadow-lg border-2 border-transparent hover:border-primary-yellow hover:-translate-y-3 transition-all duration-300 ease-in-out overflow-hidden flex flex-col justify-end"
       style={{
-        backgroundImage: `url('${backgroundImage}')`,
+        backgroundImage: inView ? `url('${backgroundImage}')` : "none",
         backgroundSize: "cover",
         backgroundPosition: "center",
       }}
@@ -30,6 +35,7 @@ const TestimonialCard = ({
           <img
             src={profileImage}
             alt={name}
+            loading="lazy"
             className="w-16 h-full object-cover"
           />
         </div>

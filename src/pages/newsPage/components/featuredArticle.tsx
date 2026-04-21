@@ -31,7 +31,7 @@ const FeaturedArticle = ({
       </div>
 
       <div>
-        <img src={image} alt="Afrticle Featured Image" />
+        <img src={image} alt="Afrticle Featured Image" loading="lazy" />
       </div>
 
       <div className="mt-6 text-justify ">

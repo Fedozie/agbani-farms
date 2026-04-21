@@ -12,17 +12,22 @@ interface NewsCardProps {
 
 const NewsCard = ({ image, title, date, author, link }: NewsCardProps) => {
   const truncateTitle = (title: string) => {
-    if(title.length <= 40){
+    if (title.length <= 40) {
       return title;
     }
     return title.substring(0, 40) + "...";
-  }
+  };
 
   return (
     <div className="rounded-2xl overflow-hidden bg-[#263C28] w-full h-100 flex flex-col transition-all duration-300 ease-in-out hover:-translate-y-3 border-2 border-transparent hover:border-primary-yellow group">
       {/* Image container */}
       <div className="relative shrink-0 h-[60%]">
-        <img src={image} alt={title} className="w-full h-full object-cover" />
+        <img
+          src={image}
+          alt={title}
+          loading="lazy"
+          className="w-full h-full object-cover"
+        />
 
         {/* Date badge */}
         <div className="absolute bottom-0 right-0 bg-primary-yellow text-[#1A1A1A] text-sm font-medium px-4 py-2 rounded-tl-lg">

@@ -91,6 +91,7 @@ const HeroSection = () => {
           <img
             src={UnderlineImg}
             alt="Underline Image"
+            loading="lazy"
             className="absolute -bottom-2 w-56"
           />
         </div>
@@ -106,6 +107,7 @@ const HeroSection = () => {
             <img
               src={LeafIcon}
               alt="Leaf Icon"
+              loading="lazy"
               className="absolute h-12 -top-7 -right-7 lg:-right-5 lg:-top-5"
             />
           </h1>

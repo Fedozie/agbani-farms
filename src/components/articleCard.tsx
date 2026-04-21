@@ -23,6 +23,7 @@ const ArticleCard = ({ image, title, timeAgo, onClick }: ArticleCardProps) => {
         <img
           src={image}
           alt={title}
+          loading="lazy"
           className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
         />
       </div>

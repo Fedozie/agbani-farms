@@ -1,5 +1,6 @@
 import { StatementsBgImg } from "../assets";
 import { TransitionLink } from "./transitionLink";
+import { useInView } from "react-intersection-observer";
 
 interface CTAProps  {
   heading: string;
@@ -7,10 +8,13 @@ interface CTAProps  {
 }
 
 const DiscoverMore = ({heading, text}: CTAProps) => {
+  const { ref, inView } = useInView({ triggerOnce: true });
+
   return (
     <div className="relative w-full bg-primary-green py-10 px-10 lg:py-20 lg:px-32 flex flex-col lg:flex-col lg:gap-8 justify-between items-center">
       <div
         className="absolute inset-0"
+        ref={ref}
         style={{
           background: "linear-gradient(to left, #553901, transparent)",
         }}
@@ -18,7 +22,7 @@ const DiscoverMore = ({heading, text}: CTAProps) => {
       <div
         className="absolute inset-0 opacity-10"
         style={{
-          backgroundImage: `url(${StatementsBgImg})`,
+          backgroundImage: inView ? `url(${StatementsBgImg})` : "none",
           backgroundSize: "cover",
           backgroundPosition: "center",
         }}

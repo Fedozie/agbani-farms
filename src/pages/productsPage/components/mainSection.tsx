@@ -159,6 +159,7 @@ export const MainCard = ({ title, cardImage, products }: MainCardProps) => {
         <img
           src={cardImage}
           alt="Product's Image"
+          loading="lazy"
           className="w-full h-full object-cover"
         />
       </div>

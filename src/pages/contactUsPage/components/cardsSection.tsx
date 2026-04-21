@@ -2,6 +2,7 @@ import { FiPhone } from "react-icons/fi";
 import { GoMail } from "react-icons/go";
 import { SlLocationPin } from "react-icons/sl";
 import { StatementsBgImg } from "../../../assets";
+import { useInView } from "react-intersection-observer";
 
 type CardsProps = {
   icon: React.ReactNode;
@@ -10,6 +11,7 @@ type CardsProps = {
 };
 
 const contacts = [
+  
   {
     icon: <FiPhone size={40} color="#F7C35F" />,
     heading: "Phone",
@@ -28,12 +30,15 @@ const contacts = [
 ];
 
 const CardsSection = () => {
+  const { ref, inView } = useInView({ triggerOnce: true });
+
   return (
     <section className="relative bg-primary-green overflow-x-hidden w-[inherit] px-10 py-8 lg:px-20 lg:py-16">
       <div
-        className="absolute inset-0 opacity-20 "
+        className="absolute inset-0 opacity-20"
+        ref={ref}
         style={{
-          backgroundImage: `url(${StatementsBgImg})`,
+          backgroundImage: inView ? `url(${StatementsBgImg})` : "none",
           backgroundSize: "cover",
           backgroundPosition: "center",
         }}

@@ -16,8 +16,11 @@ import {
   PriorityImage3,
 } from "../../assets";
 import { DiscoverMore, PageFade } from "../../components";
+import { useInView } from "react-intersection-observer";
 
 const AboutUsPage = () => {
+  const { ref, inView } = useInView({ triggerOnce: true });
+
   const statements = [
     {
       image: <SlTarget size={40} color="#F7C35F" />,
@@ -80,8 +83,9 @@ const AboutUsPage = () => {
         <section className="relative p-10 lg:p-20 w-[inherit] flex justify-between gap-20 bg-accent-green overflow-x-hidden">
           <div
             className="absolute inset-0 opacity-20"
+            ref={ref}
             style={{
-              backgroundImage: `url(${StatementsBgImg})`,
+              backgroundImage: inView ? `url(${StatementsBgImg})` : "none",
               backgroundSize: "cover",
               backgroundPosition: "center",
             }}

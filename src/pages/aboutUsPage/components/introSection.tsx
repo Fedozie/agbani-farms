@@ -66,6 +66,7 @@ export const IntroPart = ({ story, title, image, description }: IntroProps) => {
         <img
           src={image}
           alt="About Us Image"
+          loading="lazy"
           className="w-full h-full object-cover object-top"
         />
       </div>

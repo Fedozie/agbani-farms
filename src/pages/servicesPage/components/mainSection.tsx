@@ -204,11 +204,13 @@ export const Product = ({
           <img
             src={imageSrc}
             alt={imageAlt}
+            loading="lazy"
             className="w-full h-full rounded-xl object-cover"
           />
           <img
             src={ProductStyle}
             alt={imageAlt}
+            loading="lazy"
             className="absolute -top-10 -left-10 -z-2 w-full h-full rounded-xl object-cover"
           />
         </div>

@@ -2,6 +2,7 @@ import { useEffect, useRef } from "react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { StatementsBgImg } from "../../../assets";
+import { useInView } from "react-intersection-observer";
 
 interface DigitsProps {
   digit: number;
@@ -40,12 +41,15 @@ const CounterSection = () => {
     },
   ];
 
+  const { ref, inView } = useInView({ triggerOnce: true });
+
   return (
     <div className="relative w-full bg-primary-yellow/90 p-10 lg:p-20">
       <div
         className="absolute inset-0 opacity-10"
+        ref={ref}
         style={{
-          backgroundImage: `url(${StatementsBgImg})`,
+          backgroundImage: inView ? `url(${StatementsBgImg})` : "none",
           backgroundSize: "cover",
           backgroundPosition: "center",
         }}

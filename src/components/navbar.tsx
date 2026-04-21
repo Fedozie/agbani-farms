@@ -52,6 +52,7 @@ const Navbar = () => {
             <img
               src={Logo}
               alt="Agbani Farms"
+              loading="lazy"
               className="h-10 w-10 lg:h-16 lg:w-16 object-contain"
             />
           )}

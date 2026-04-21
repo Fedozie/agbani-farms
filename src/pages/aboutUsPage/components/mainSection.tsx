@@ -8,11 +8,13 @@ const MainSection = () => {
           <img
             src={ServicesImg}
             alt="Image of About Us"
+            loading="lazy"
             className="w-full h-full rounded-xl object-cover"
           />
           <img
             src={ProductStyle}
             alt="Background style"
+            loading="lazy"
             className="absolute -top-10 -left-10 -z-2 w-full h-full rounded-xl object-cover"
           />
         </div>

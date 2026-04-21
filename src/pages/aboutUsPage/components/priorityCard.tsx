@@ -18,6 +18,7 @@ const PriorityCard = ({
       <img
         src={image}
         alt="Image"
+        loading="lazy"
         className={`rounded-2xl absolute -z-10 w-auto h-[70%] ${reverse ? "right-0 justify-self-start" : "left-0 justify-self-end"}`}
       />
       <div className="h-60 w-[70%] px-4 py-6 bg-[#263C28] border-primary-yellow border rounded-2xl">

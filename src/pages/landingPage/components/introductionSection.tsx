@@ -1,12 +1,17 @@
 
 import { IntroBgImg, IntroSectionImg, IntroMoneyIcon } from "../../../assets";
+import { useInView } from "react-intersection-observer";
+
 
 const IntroductionSection = () => {
+  const { ref, inView } = useInView({ triggerOnce: true });
+
   return (
     <div
+      ref={ref}
       className="relative w-full bg-[#2D4A2F] px-10 py-14  flex flex-col-reverse overflow-hidden gap-20 lg:flex-row lg:px-20 lg:py-28 lg:items-center lg:justify-between lg:gap-0"
       style={{
-        backgroundImage: `url('${IntroBgImg}')`,
+        backgroundImage: inView ? `url('${IntroBgImg}')` : "none",
         backgroundSize: "500px",
         // backgroundPosition: "right 120%",
         backgroundPosition: "bottom right",
@@ -23,6 +28,7 @@ const IntroductionSection = () => {
             <img
               src={IntroSectionImg}
               alt="Farmer harvesting crops"
+              loading="lazy"
               className="w-full h-128 object-cover rounded-2xl lg:h-162.5"
             />
 
@@ -30,6 +36,7 @@ const IntroductionSection = () => {
               <img
                 src={IntroMoneyIcon}
                 alt="Money stack"
+                loading="lazy"
                 className="h-12 pr-2"
               />
               <div className="pl-2">

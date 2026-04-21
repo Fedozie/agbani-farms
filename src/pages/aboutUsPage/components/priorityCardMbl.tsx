@@ -17,6 +17,7 @@ const PriorityCardMbl = ({
       <img
         src={image}
         alt="Image"
+        loading="lazy"
         className="w-full rounded-t-2xl"
       />
       <div className="h-60 w-full px-4 py-6 bg-[#263C28] border-primary-yellow border rounded-b-2xl">
