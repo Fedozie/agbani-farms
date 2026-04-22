@@ -1,4 +1,7 @@
 import { IoIosCheckmarkCircle } from "react-icons/io";
+import { useEffect, useRef } from "react";
+import { gsap } from "gsap";
+import { useInView } from "react-intersection-observer";
 
 import {
   ProductProcessor,
@@ -132,7 +135,9 @@ const MainSection = () => {
   return (
     <section className="bg-green-bg w-full">
       <div className="text-center text-white w-[80%] mx-auto pt-10">
-        <p className="hidden text-[3.125rem] font-bold lg:block">Our Services</p>
+        <p className="hidden text-[3.125rem] font-bold lg:block">
+          Our Services
+        </p>
         <p className="hidden text-xl font-normal lg:block">
           At Agbani Farms Limited, we offer a comprehensive range of
           agricultural services spanning the entire food production and
@@ -170,14 +175,54 @@ export const Product = ({
   descriptionThree,
   reverse = false,
 }: ProductProps) => {
+  const { ref, inView } = useInView({ triggerOnce: true, threshold: 0.45 });
+  const contentRef = useRef<HTMLDivElement>(null);
+  const imageRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    if (!contentRef.current || !imageRef.current) return;
+
+    gsap.set(contentRef.current.children, {
+      opacity: 0,
+      x: reverse ? 60 : -60,
+    });
+    gsap.set(imageRef.current, { opacity: 0, x: reverse ? -60 : 60 });
+  }, [reverse]);
+
+  useEffect(() => {
+    if (!inView || !contentRef.current || !imageRef.current) return;
+
+    const ctx = gsap.context(() => {
+      // Content side — stagger each child
+      gsap.to(Array.from(contentRef.current!.children), {
+        opacity: 1,
+        x: 0,
+        duration: 0.7,
+        ease: "power3.out",
+        stagger: 0.15,
+      });
+
+      // Image side
+      gsap.to(imageRef.current, {
+        opacity: 1,
+        x: 0,
+        duration: 0.9,
+        ease: "power3.out",
+        delay: 0.2,
+      });
+    });
+
+    return () => ctx.revert();
+  }, [inView]);
+
   return (
-    <section>
+    <section ref={ref}>
       <div
         className={`bg-green-bg px-10 pt-16 lg:py-32 flex justify-between items-center gap-8 lg:gap-10 ${
           reverse ? "flex-col lg:flex-row-reverse" : "flex-col lg:flex-row"
         }`}
       >
-        <div className="w-full lg:w-[50%]">
+        <div ref={contentRef} className="w-full lg:w-[50%]">
           <p className="font-bold text-2xl md:text-4xl lg:text-[3.125rem] text-primary-white mb-6">
             {title}
           </p>
@@ -188,19 +233,24 @@ export const Product = ({
             {descriptionTwo.map((description, index) => (
               <div
                 key={index}
-                className="flex flex-row justify-start items-center gap-4 "
+                className="flex flex-row justify-start items-center gap-4"
               >
                 <IoIosCheckmarkCircle size={32} color="#F7C35F" />
-                <p className="w-full text-base md:text-lg lg:text-xl text-white my-2">{description}</p>
+                <p className="w-full text-base md:text-lg lg:text-xl text-white my-2">
+                  {description}
+                </p>
               </div>
             ))}
           </div>
-
           <p className="text-primary-white font-normal text-base mb-6 md:text-lg lg:text-xl leading-relaxed lg:mb-0">
             {descriptionThree}
           </p>
         </div>
-        <div className="relative w-64 h-64 mb-10 lg:w-108 lg:h-108 shrink-0 isolate">
+
+        <div
+          ref={imageRef}
+          className="relative w-64 h-64 mb-10 lg:w-108 lg:h-108 shrink-0 isolate"
+        >
           <img
             src={imageSrc}
             alt={imageAlt}

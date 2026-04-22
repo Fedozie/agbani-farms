@@ -1,11 +1,11 @@
 import { HeroSection, MainSection } from "./components";
 import { DiscoverMore, PageFade } from "../../components";
 
-const ProductsPage = () => {
+const ProductsPage = ({ ready }: { ready?: boolean }) => {
   return (
     <PageFade>
       <section>
-        <HeroSection />
+        <HeroSection ready={ready} />
         <MainSection />
         <DiscoverMore
           heading="How to Order"

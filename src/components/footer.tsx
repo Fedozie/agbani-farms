@@ -70,7 +70,7 @@ const Footer: React.FC = () => {
             <p className="text-xl font-semibold py-4">Useful Links</p>
             <ul>
               {navLinks.map((link, index) => (
-                <li key={index} className="">
+                <li key={index} className="hover:font-medium hover:text-primary-yellow transition duration-300 ease-in-out">
                   <TransitionLink to={link.link} className="block mb-3">
                     {link.name}
                   </TransitionLink>

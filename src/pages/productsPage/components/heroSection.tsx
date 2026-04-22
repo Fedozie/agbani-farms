@@ -3,32 +3,33 @@ import { gsap } from "gsap";
 import { ProductServicesHeroBg } from "../../../assets";
 import { useInView } from "react-intersection-observer";
 
-const HeroSection = () => {
+const HeroSection = ({ ready = true }: { ready?: boolean }) => {
   const { ref, inView } = useInView({ triggerOnce: true });
-
   const textRef = useRef<HTMLParagraphElement>(null);
 
   useEffect(() => {
-  if (!textRef.current || !inView) return; 
+    if (!textRef.current) return;
+    const letters = textRef.current.querySelectorAll("span");
+    gsap.set(letters, { opacity: 0, y: 40 });
+  }, []);
 
-  const letters = textRef.current.querySelectorAll("span");
+  useEffect(() => {
+    if (!textRef.current || !inView || !ready) return;
 
-  const ctx = gsap.context(() => {
-    gsap.fromTo(
-      letters,
-      { opacity: 0, y: 40 },
-      {
+    const letters = textRef.current.querySelectorAll("span");
+
+    const ctx = gsap.context(() => {
+      gsap.to(letters, {
         opacity: 1,
         y: 0,
         duration: 0.85,
         ease: "power3.out",
         stagger: 0.09,
-      }
-    );
-  }, textRef);
+      });
+    }, textRef);
 
-  return () => ctx.revert();
-}, [inView]); 
+    return () => ctx.revert();
+  }, [inView, ready]);
 
   return (
     <section

@@ -68,11 +68,11 @@ function App() {
         <Routes location={location} key={location.pathname}>
           <Route element={<Layout />}>
             <Route path="/" element={<LandingPage />} />
-            <Route path="/contact-us" element={<ContactUsPage />} />
-            <Route path="/news" element={<NewsPage />} />
-            <Route path="/about-us" element={<AboutUsPage />} />
-            <Route path="/services" element={<ServicesPage />} />
-            <Route path="/products" element={<ProductsPage />} />
+            <Route path="/contact-us" element={<ContactUsPage ready={!loading} />} />
+            <Route path="/news" element={<NewsPage ready={!loading} />} />
+            <Route path="/about-us" element={<AboutUsPage ready={!loading} />} />
+            <Route path="/services" element={<ServicesPage ready={!loading} />} />
+            <Route path="/products" element={<ProductsPage ready={!loading} />} />
             <Route path="/services/:slug" element={<ProductDetailsPage />} />
             <Route path="/news/:slug" element={<NewsDetailsPage />} />
           </Route>

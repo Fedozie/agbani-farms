@@ -18,7 +18,7 @@ import {
 import { DiscoverMore, PageFade } from "../../components";
 import { useInView } from "react-intersection-observer";
 
-const AboutUsPage = () => {
+const AboutUsPage = ({ ready }: { ready?: boolean }) => {
   const { ref, inView } = useInView({ triggerOnce: true });
 
   const statements = [
@@ -78,7 +78,7 @@ const AboutUsPage = () => {
   return (
     <PageFade>
       <section>
-        <HeroSection />
+        <HeroSection ready={ready} />
         <IntroSection />
         <section className="relative p-10 lg:p-20 w-[inherit] flex justify-between gap-20 bg-accent-green overflow-x-hidden">
           <div

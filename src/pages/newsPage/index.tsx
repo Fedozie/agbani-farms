@@ -1,11 +1,11 @@
 import { HeroSection, MainSection } from "./components";
 import { DiscoverMore, PageFade } from "../../components";
 
-const NewsPage = () => {
+const NewsPage = ({ ready }: { ready?: boolean }) => {
   return (
     <PageFade>
       <section>
-        <HeroSection />
+        <HeroSection ready={ready} />
         <MainSection />
         <DiscoverMore
           heading="Media Coverage"
