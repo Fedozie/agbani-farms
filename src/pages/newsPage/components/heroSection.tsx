@@ -1,16 +1,54 @@
+import { useEffect, useRef } from "react";
+import { gsap } from "gsap";
 import { NewsHeroBg } from "../../../assets";
+import { useInView } from "react-intersection-observer";
 
 const HeroSection = () => {
+  const { ref, inView } = useInView({ triggerOnce: true });
+  const textRef = useRef<HTMLParagraphElement>(null);
+
+  useEffect(() => {
+    if (!textRef.current || !inView) return;
+
+    const letters = textRef.current.querySelectorAll("span");
+
+    const ctx = gsap.context(() => {
+      gsap.fromTo(
+        letters,
+        { opacity: 0, y: 40 },
+        {
+          opacity: 1,
+          y: 0,
+          duration: 0.85,
+          ease: "power3.out",
+          stagger: 0.09,
+        }
+      );
+    }, textRef);
+
+    return () => ctx.revert();
+  }, [inView]);
+
   return (
     <section
+      ref={ref}
       className="w-[inherit] h-[90vh] bg-cover flex justify-center items-center overflow-x-hidden px-10 bg-[#000000a5] bg-blend-overlay mx-auto lg:px-20"
       style={{
-        backgroundImage: `url(${NewsHeroBg})`,
+        backgroundImage: inView ? `url(${NewsHeroBg})` : "none",
         backgroundPosition: "center",
       }}
     >
       <div className="w-full flex justify-center items-center lg:w-[50%] text-primary-yellow">
-        <p className="font-bold text-[2.5rem] lg:text-[4rem]">News</p>
+        <p
+          ref={textRef}
+          className="font-bold text-[2.5rem] lg:text-[4rem]"
+        >
+          {"News".split("").map((letter, index) => (
+            <span key={index} style={{ display: "inline-block" }}>
+              {letter}
+            </span>
+          ))}
+        </p>
       </div>
     </section>
   );

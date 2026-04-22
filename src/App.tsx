@@ -1,7 +1,7 @@
-import { lazy, Suspense } from "react";
+import { lazy, Suspense, useState, useCallback } from "react";
 import "./App.css";
 import { Routes, Route, useLocation } from "react-router-dom";
-import { Layout, Loader, } from "./components";
+import { Layout, Loader } from "./components";
 
 const LandingPage = lazy(() =>
   import("./pages/landingPage").then((module) => ({
@@ -58,24 +58,30 @@ const ProductDetailsPage = lazy(() =>
 function App() {
   const location = useLocation();
 
-  return (
-    <Suspense fallback={<Loader />}>
-      <Routes location={location} key={location.pathname}>
-        <Route element={<Layout />}>
-          <Route path="/" element={<LandingPage />} />
-          <Route path="/contact-us" element={<ContactUsPage />} />
-          <Route path="/news" element={<NewsPage />} />
-          <Route path="/about-us" element={<AboutUsPage />} />
-          <Route path="/services" element={<ServicesPage />} />
-          <Route path="/products" element={<ProductsPage />} />
-          <Route path="/services/:slug" element={<ProductDetailsPage />} />
-          <Route path="/news/:slug" element={<NewsDetailsPage />} />
-        </Route>
+  const [loading, setLoading] = useState(true);
+  const handleComplete = useCallback(() => setLoading(false), []);
 
-        {/* Outside layout — no Navbar/Footer */}
-        <Route path="*" element={<NotFoundPage />} />
-      </Routes>
-    </Suspense>
+  return (
+    <>
+      {loading && <Loader onComplete={handleComplete} />}
+      <Suspense fallback={null}>
+        <Routes location={location} key={location.pathname}>
+          <Route element={<Layout />}>
+            <Route path="/" element={<LandingPage />} />
+            <Route path="/contact-us" element={<ContactUsPage />} />
+            <Route path="/news" element={<NewsPage />} />
+            <Route path="/about-us" element={<AboutUsPage />} />
+            <Route path="/services" element={<ServicesPage />} />
+            <Route path="/products" element={<ProductsPage />} />
+            <Route path="/services/:slug" element={<ProductDetailsPage />} />
+            <Route path="/news/:slug" element={<NewsDetailsPage />} />
+          </Route>
+
+          {/* Outside layout — no Navbar/Footer */}
+          <Route path="*" element={<NotFoundPage />} />
+        </Routes>
+      </Suspense>
+    </>
   );
 }
 
