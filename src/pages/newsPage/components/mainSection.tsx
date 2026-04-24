@@ -134,7 +134,7 @@ const MainSection = () => {
   }, [inView]);
 
   return (
-    <section ref={ref} className="w-full bg-green-bg lg:px-20 lg:py-14">
+    <section ref={ref} className="w-full bg-green-bg px-10 py-10 lg:px-20 lg:py-14">
       <p
         ref={headingRef}
         className="text-2xl lg:text-[3.125rem] font-bold text-white mt-12"
@@ -159,8 +159,8 @@ const MainSection = () => {
         ))}
       </div>
       <div className="w-full">
-        <p className="text-white text-[3.125rem] font-bold">Photo Gallery</p>
-        <p className="text-white text-xl font-normal">
+        <p className="text-white text-2xl lg:text-[3.125rem] font-bold">Photo Gallery</p>
+        <p className="text-white text-base lg:text-xl font-normal">
           Explore our photo gallery for a visual journey through the operations,
           people, and products of Agbani Farms Limited.
         </p>

@@ -41,12 +41,12 @@ const MeetOurTeam = () => {
         }}
       />
       <div>
-        <p className="text-[3.125rem] text-white text-center font-bold">
+        <p className="text-[2rem] lg:text-[3.125rem] text-white text-center font-bold">
           Meet Our Team
         </p>
       </div>
       <div className="mx-auto lg:w-[60%] my-4">
-        <p className="text-white text-center text-xl">
+        <p className="text-white text-center text-lg lg:text-xl">
           Agbani Farms is powered by a passionate, experienced, and
           multi-disciplinary team of agricultural professionals, business
           managers, technical specialists, and field workers, all united by a

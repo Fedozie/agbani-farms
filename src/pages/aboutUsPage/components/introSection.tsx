@@ -72,7 +72,7 @@ export const IntroPart = ({ story, title, image, description }: IntroProps) => {
       </div>
       <div>
         {description.map((paragraph, index) => (
-          <p key={index} className="text-white text-lg lg:text-xl leading-6.75 mb-4 text-justify lg:text-left">
+          <p key={index} className="text-white text-base lg:text-xl leading-6.75 mb-4 text-justify lg:text-left">
             {paragraph}
           </p>
         ))}

@@ -35,17 +35,17 @@ const ValuesSection = () => {
   return (
     <section className="w-full bg-green-bg px-10 py-8 lg:px-20 lg:py-16">
       <div className="w-full">
-        <p className="text-white uppercase text-center lg:text-xl">
+        <p className="text-white uppercase text-center text-base lg:text-xl">
           Our core values
         </p>
       </div>
       <div className="w-full">
-        <p className="text-white text-center lg:text-[3.125rem] font-bold">
+        <p className="text-white text-center text-2xl lg:text-[3.125rem] font-bold">
           What Sets Us Apart
         </p>
       </div>
 
-      <div className="w-[80%] grid lg:grid-cols-3 gap-10 mx-auto my-10">
+      <div className="w-full lg:w-[80%] grid lg:grid-cols-3 gap-10 mx-auto my-10">
         {values.map((value, index) => (
           <div key={index} className="h-full">
             <ValueCard

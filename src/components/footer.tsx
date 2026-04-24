@@ -41,7 +41,7 @@ const Footer: React.FC = () => {
     <footer className="w-full bg-primary-green text-white ">
       <div className="w-full flex flex-col lg:flex-row lg:justify-between p-10 lg:p-20">
         <div>
-          <p className="text-primary-white text-[2.5rem] font-bold mb-4">
+          <p className="text-primary-white text-3xl lg:text-[2.5rem] font-bold mb-4">
             Agbani Farms
           </p>
           <p className="text-primary-white text-base lg:text-lg font-normal mb-6">
