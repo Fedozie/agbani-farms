@@ -2,15 +2,32 @@ import { Link } from "react-router-dom";
 import { FaArrowRight } from "react-icons/fa6";
 import { FaRegUser } from "react-icons/fa6";
 
+type NewsSource = {
+  id: string | null;
+  name: string;
+};
+
+type Article = {
+  source: NewsSource;
+  author: string | null;
+  title: string;
+  description: string | null;
+  url: string;
+  urlToImage: string | null;
+  publishedAt: string;
+  content: string | null;
+};
+
 interface NewsCardProps {
   image: string;
   title: string;
   date: string;
   author: string;
   link: string;
+  article: Article;
 }
 
-const NewsCard = ({ image, title, date, author, link }: NewsCardProps) => {
+const NewsCard = ({ image, title, date, author, link, article }: NewsCardProps) => {
   const truncateTitle = (title: string) => {
     if (title.length <= 40) {
       return title;
@@ -19,9 +36,9 @@ const NewsCard = ({ image, title, date, author, link }: NewsCardProps) => {
   };
 
   return (
-    <div className="rounded-2xl overflow-hidden bg-[#263C28] w-full h-100 flex flex-col transition-all duration-300 ease-in-out hover:-translate-y-3 border-2 border-transparent hover:border-primary-yellow group">
+    <div className="rounded-2xl overflow-hidden bg-[#263C28] w-full h-full flex flex-col transition-all duration-300 ease-in-out hover:-translate-y-3 border-2 border-transparent hover:border-primary-yellow group">
       {/* Image container */}
-      <div className="relative shrink-0 h-[60%]">
+      <div className="relative shrink-0 h-48 lg:h-56">
         <img
           src={image}
           alt={title}
@@ -49,6 +66,7 @@ const NewsCard = ({ image, title, date, author, link }: NewsCardProps) => {
 
         <Link
           to={link}
+          state={{ article }}
           className="flex items-center gap-2 text-primary-yellow text-sm font-medium hover:gap-4 transition-all duration-300 mt-auto"
         >
           Explore <FaArrowRight />

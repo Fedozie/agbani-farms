@@ -132,7 +132,7 @@ const MainSection = () => {
           responsibly produced.
         </p>
       </div>
-      <section className="pt-20 pb-10 divide-y-2 divide-primary-yellow">
+      <section className="pt-20 pb-10 divide-y divide-primary-yellow">
         {productsArray.map((products, index) => (
           <MainCard
             key={index}
@@ -172,7 +172,7 @@ export const MainCard = ({ title, cardImage, products }: MainCardProps) => {
             >
               {product.name}
             </h2>
-            <p className="text-white text-sm md:text-base lg:text-xl leading-relaxed">
+            <p className="text-white text-sm md:text-base lg:text-lg leading-relaxed">
               {product.description}
             </p>
           </div>

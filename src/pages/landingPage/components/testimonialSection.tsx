@@ -177,7 +177,7 @@ const TestimonialsSection = () => {
         </h2>
       </div>
 
-      <div className="relative w-[70%] mx-auto flex flex-col lg:flex-row items-center justify-between gap-6">
+      <div className="relative w-full lg:w-[70%] mx-auto flex flex-col lg:flex-row items-center justify-between gap-6">
         <button
           onClick={prevSlide}
           className="absolute -bottom-20 lg:top-1/2 left-10 lg:-left-4 z-10 w-12 h-12 rounded-full bg-primary-yellow text-[#1A1A1A] flex items-center justify-center hover:bg-yellow-400 transition-all duration-300 cursor-pointer shadow-lg"
@@ -192,6 +192,7 @@ const TestimonialsSection = () => {
             ref={(el) => {
               cardRefs.current[index] = el;
             }}
+            className={index !== 0 ? "hidden lg:block" : ""}
           >
             <TestimonialCard
               backgroundImage={testimonial.backgroundImage}

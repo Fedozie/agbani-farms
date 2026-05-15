@@ -1,21 +1,22 @@
-import { useState, useEffect } from "react";
-import { ErrorResponse, PhotoCard } from "../../../components";
-import axios from "axios";
+import { useState } from "react";
+import { PhotoCard } from "../../../components";
+// import axios from "axios";
 import { FaChevronLeft, FaChevronRight } from "react-icons/fa6";
+import {
+  ServicesImg,
+  CatfishImg,
+  TilapiaImg,
+  DriedFishImg,
+  SmokedCatfishImg,
+} from "../../../assets";
 
-type RawGalleryItem = {
-  id: number;
-  acf: {
-    tag: string;
-    superset: string;
-    image: number;
-  };
-  _embedded: {
-    "wp:featuredmedia": {
-      source_url: string;
-    }[];
-  };
-};
+// ─── Commented out: fetch from WordPress endpoint ─────────────────────────
+// type RawGalleryItem = {
+//   id: number;
+//   acf: { tag: string; superset: string; image: number };
+//   _embedded: { "wp:featuredmedia": { source_url: string }[] };
+// };
+// ─────────────────────────────────────────────────────────────────────────
 
 type GalleryItem = {
   id: number;
@@ -23,6 +24,31 @@ type GalleryItem = {
   superset: string;
   imageUrl: string;
 };
+
+// ─── Local gallery data ───────────────────────────────────────────────────────
+const localGalleryData: GalleryItem[] = [
+  { id: 1,  title: "Tilapia Fish",        superset: "Fish Farming", imageUrl: TilapiaImg },
+  { id: 2,  title: "Dried Fish",          superset: "Fish Farming", imageUrl: DriedFishImg },
+  { id: 3,  title: "Smoked Catfish",      superset: "Fish Farming", imageUrl: SmokedCatfishImg },
+  { id: 4,  title: "Catfish",             superset: "Fish Farming", imageUrl: CatfishImg },
+  { id: 5,  title: "Cattle Grazing",      superset: "Livestock",    imageUrl: ServicesImg },
+  { id: 6,  title: "Poultry House",       superset: "Livestock",    imageUrl: ServicesImg },
+  { id: 7,  title: "Goat Pen",            superset: "Livestock",    imageUrl: ServicesImg },
+  { id: 8,  title: "Maize Field",         superset: "Crops",        imageUrl: ServicesImg },
+  { id: 9,  title: "Cassava Farm",        superset: "Crops",        imageUrl: ServicesImg },
+  { id: 10, title: "Vegetable Garden",    superset: "Crops",        imageUrl: ServicesImg },
+  { id: 11, title: "Rice Paddies",        superset: "Crops",        imageUrl: ServicesImg },
+  { id: 12, title: "Cassava Processing",  superset: "Processing",   imageUrl: ServicesImg },
+  { id: 13, title: "Palm Oil Mill",       superset: "Processing",   imageUrl: ServicesImg },
+  { id: 14, title: "Packaging Unit",      superset: "Processing",   imageUrl: ServicesImg },
+  { id: 15, title: "Field Training",      superset: "Training",     imageUrl: ServicesImg },
+  { id: 16, title: "Workshop Session",    superset: "Training",     imageUrl: ServicesImg },
+  { id: 17, title: "Youth Programme",     superset: "Training",     imageUrl: ServicesImg },
+  { id: 18, title: "Farmers Conference",  superset: "Events",       imageUrl: ServicesImg },
+  { id: 19, title: "Harvest Festival",    superset: "Events",       imageUrl: ServicesImg },
+  { id: 20, title: "Community Outreach",  superset: "Events",       imageUrl: ServicesImg },
+];
+// ─────────────────────────────────────────────────────────────────────────────
 
 // Skeleton card — matches the shape of PhotoCard
 const PhotoCardSkeleton = () => (
@@ -35,38 +61,42 @@ const PhotoCardSkeleton = () => (
 const Gallery = () => {
   const [activeFilter, setActiveFilter] = useState("Fish Farming");
   const [currentPage, setCurrentPage] = useState(0);
-  const [loading, setLoading] = useState(true);
-  const [error, setError] = useState<string | null>(null);
-  const [allImages, setAllImages] = useState<GalleryItem[]>([]);
 
-  const transformedGallery = (items: RawGalleryItem[]): GalleryItem[] => {
-    return items.map((item) => ({
-      id: item.id,
-      title: item.acf.tag,
-      superset: item.acf.superset,
-      imageUrl: item._embedded["wp:featuredmedia"][0]?.source_url ?? "",
-    }));
-  };
-
-  useEffect(() => {
-    const fetchGallery = async () => {
-      try {
-        const response = await axios.get<RawGalleryItem[]>(
-          "https://api.agbanifarms.com/wp-json/wp/v2/gallery?per_page=30&_embed", // fixed URL
-        );
-        const transformed = transformedGallery(response.data);
-        setAllImages(transformed);
-        console.log(transformed);
-      } catch (err) {
-        setError("Failed to fetch gallery");
-        console.error(err);
-      } finally {
-        setLoading(false);
-      }
-    };
-
-    fetchGallery();
-  }, []);
+  // ─── Local data — no async loading needed ─────────────────────────────────
+  const [loading] = useState(false);
+  const [allImages] = useState<GalleryItem[]>(localGalleryData);
+  // ─── Re-enable these when switching back to the endpoint: ─────────────────
+  // const [loading, setLoading] = useState(true);
+  // const [allImages, setAllImages] = useState<GalleryItem[]>([]);
+  // const [error, setError] = useState<string | null>(null);
+  //
+  // const transformedGallery = (items: RawGalleryItem[]): GalleryItem[] => {
+  //   return items.map((item) => ({
+  //     id: item.id,
+  //     title: item.acf.tag,
+  //     superset: item.acf.superset,
+  //     imageUrl: item._embedded["wp:featuredmedia"][0]?.source_url ?? "",
+  //   }));
+  // };
+  //
+  // useEffect(() => {
+  //   const fetchGallery = async () => {
+  //     try {
+  //       const response = await axios.get<RawGalleryItem[]>(
+  //         "https://api.agbanifarms.com/wp-json/wp/v2/gallery?per_page=30&_embed",
+  //       );
+  //       const transformed = transformedGallery(response.data);
+  //       setAllImages(transformed);
+  //     } catch (err) {
+  //       setError("Failed to fetch gallery");
+  //       console.error(err);
+  //     } finally {
+  //       setLoading(false);
+  //     }
+  //   };
+  //   fetchGallery();
+  // }, []);
+  // ─────────────────────────────────────────────────────────────────────────
 
   type FilterType =
     | "Fish Farming"
@@ -110,13 +140,14 @@ const Gallery = () => {
     if (currentPage > 0) setCurrentPage(currentPage - 1);
   };
 
-  if (error) {
-    return (
-      <section className="w-full overflow-x-hidden py-20 flex justify-center items-center">
-        <ErrorResponse text={error} />
-      </section>
-    );
-  }
+  // re-enable with endpoint:
+  // if (error) {
+  //   return (
+  //     <section className="w-full overflow-x-hidden py-20 flex justify-center items-center">
+  //       <ErrorResponse text={error} />
+  //     </section>
+  //   );
+  // }
 
   return (
     <div className="mb-20">
@@ -147,8 +178,7 @@ const Gallery = () => {
         <div className="flex-1 flex flex-col">
           <div className="grid lg:grid-cols-2 gap-6 mb-8">
             {loading
-              ? // show 4 skeleton cards while fetching
-                Array.from({ length: 4 }).map((_, i) => (
+              ? Array.from({ length: 4 }).map((_, i) => (
                   <PhotoCardSkeleton key={i} />
                 ))
               : displayedPhotos.map((image) => (

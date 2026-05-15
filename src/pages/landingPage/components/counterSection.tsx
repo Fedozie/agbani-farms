@@ -60,7 +60,7 @@ const CounterSection = () => {
           Why choose us
         </p>
       </div>
-      <div className="w-full flex flex-col gap-4 lg:flex-row lg:justify-between lg:gap-4 mt-10">
+      <div className="w-full flex flex-col gap-4 lg:flex-row lg:justify-between lg:gap-4 lg:mt-10">
         {numberData.map((number, index) => (
           <div key={index}>
             <Digit
@@ -108,12 +108,12 @@ const Digit = ({ digit, additive, hashtag, text }: DigitsProps) => {
 
   return (
     <div>
-      <p className="block text-center font-abhaya text-[6rem] font-bold leading-[1.85]">
+      <p className="block text-center font-abhaya text-[4.5rem] font-bold leading-[1.85] md:text-[6rem]">
         {hashtag ? "#" : ""}
         <span ref={numberRef}>0</span>
         {additive ? "+" : ""}
       </p>
-      <p className="block text-center text-2xl font-medium -mt-8 lg:-mt-4">{text}</p>
+      <p className="block text-center text-lg font-medium -mt-8 lg:-mt-4 lg:text-2xl">{text}</p>
     </div>
   );
 };

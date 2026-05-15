@@ -31,6 +31,11 @@ import ProcessingIcon from "./processingIcon.webp";
 import TrainingIcon from "./trainingIcon.webp";
 import OurStoryImg from "./ourStory.webp";
 import AboutUsImg from "./aboutUsImg.webp";
+import CatfishImg from "./catfish.webp";
+import TilapiaImg from "./tilapiaFish.webp";
+import DriedFishImg from "./driedFish.webp";
+import SmokedCatfishImg from "./smokedCatfish.webp";
+
 
 export {
   BgImage,
@@ -65,5 +70,9 @@ export {
   TrainingIcon,
   MeetOurTeamBg,
   OurStoryImg,
-  AboutUsImg
+  AboutUsImg,
+  CatfishImg,
+  TilapiaImg,
+  DriedFishImg,
+  SmokedCatfishImg,
 };

@@ -29,7 +29,7 @@ const ProjectCard = ({ image, title, date, link }: ProjectCardProps) => {
       {/* Content */}
       <div className="p-6 flex flex-col flex-1">
         <p className="text-white text-xl font-bold leading-snug mb-4 flex-1 line-clamp-3">
-          {title}
+          {title.slice(0, 50)}...
         </p>
 
         <Link
