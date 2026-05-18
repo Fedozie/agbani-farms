@@ -72,7 +72,7 @@ export { CardsSection };
 
 const ContactCard = ({ icon, heading, text }: CardsProps) => {
   return (
-    <div className="z-5 mt-8 bg-green-bg rounded-2xl flex justify-start items-center gap-4 py-8 px-4 w-auto lg:mt-0">
+    <div className="z-5 mt-8 bg-[#263C28] rounded-2xl flex justify-start items-center gap-4 py-8 px-4 w-auto lg:mt-0">
       <div className="border border-primary-yellow p-4 rounded-full">
         {icon}
       </div>
